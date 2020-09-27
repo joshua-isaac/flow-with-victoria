@@ -1,68 +1,52 @@
 import React, { Component } from "react"
-import { Link, graphql, StaticQuery } from "gatsby"
+import { Link } from "gatsby"
+import "./GlobalHeader.scss"
 
-import "./GlobalHeader.css"
-
-export default props => (
-  <StaticQuery
-    query={graphql`
-      query GlobalHeaderQuery {
-        agilityGlobalHeader(
-          properties: { referenceName: { eq: "globalheader" } }
-        ) {
-          customFields {
-            siteName
-          }
-        }
-        allAgilitySitemapNode {
-          nodes {
-            languageCode
-            path
-            menuText
-            pageID
-          }
-        }
+const GlobalHeader = () => {
+  // check for window object
+  typeof window !== "undefined" &&
+    // function for sticky header
+    window.addEventListener("scroll", function(event) {
+      var scroll = this.scrollY
+      const header = document.getElementById("header")
+      if (scroll >= 50) {
+        header.classList.add("sticky")
+      } else {
+        header.classList.remove("sticky")
       }
-    `}
-    render={queryData => {
-      const viewModel = {
-        item: queryData.agilityGlobalHeader,
-        menuLinks: queryData.allAgilitySitemapNode.nodes.filter(sitemapNode => {
-          let isTopLevelPage = sitemapNode.path.split("/").length === 2
-          const isThisLanguage = sitemapNode.languageCode === props.languageCode
-          if (props.isMultiLanguage) {
-            isTopLevelPage = sitemapNode.path.split("/").length === 3
-          }
-          //only return nodes from this language and top level links only
-          return isThisLanguage && isTopLevelPage
-        }),
-      }
-      return <GlobalHeader {...viewModel} />
-    }}
-  />
-)
-
-class GlobalHeader extends Component {
-  renderLinks = () => {
-    let links = []
-    this.props.menuLinks.forEach(node => {
-      links.push(
-        <li key={node.pageID}>
-          <Link to={node.path}>{node.menuText}</Link>
-        </li>
-      )
     })
-    return links
-  }
-  render() {
-    return (
-      <header className="header">
-        <Link to="/" className="logo-link">
-          Home
-        </Link>
-        <label>{this.props.item.customFields.siteName}</label>
-        <ul className="links">{this.renderLinks()}</ul>
-      </header>
-    )
-  }
+  return (
+    <header className="header" id="header">
+      <div className="header__container">
+        <div className="header__logo">
+          <Link to="/">
+            <h1>
+              FLOW<span>WITH</span>VICTORIA
+            </h1>
+          </Link>
+        </div>
+        <div className="header__menu">
+          <ul>
+            <li>
+              <a href="#home">Home</a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#services">Services</a>
+            </li>
+            <li>
+              <a href="#videos">Videos</a>
+            </li>
+            <li className="book__btn">
+              <a href="#book">Book</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+  )
 }
+
+export default GlobalHeader

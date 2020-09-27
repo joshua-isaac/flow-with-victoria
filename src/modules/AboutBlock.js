@@ -32,31 +32,27 @@ const AboutBlock = () => {
     imageLocalImg,
   } = data.agilityAboutBlock.customFields
   return (
-    <div className="about__block">
-      <div className="about__image">
-        <Img className="image" fluid={imageLocalImg.childImageSharp.fluid} />
+    <>
+      <a className="anchor" id="about"></a>
+      <div className="about__block">
+        <Row>
+          <Col lg={4} md={4}>
+            <div className="about__image">
+              <Img
+                className="image"
+                fluid={imageLocalImg.childImageSharp.fluid}
+              />
+            </div>
+          </Col>
+          <Col lg={8} md={8}>
+            <div className="about__content">
+              <h3>{aboutTitle}</h3>
+              <div dangerouslySetInnerHTML={renderHTML(aboutText)}></div>
+            </div>
+          </Col>
+        </Row>
       </div>
-      <div className="about__content">
-        <h3>{aboutTitle}</h3>
-        <div dangerouslySetInnerHTML={renderHTML(aboutText)}></div>
-      </div>
-      {/* <Row>
-        <Col lg={6} md={6}>
-          <div className="about__image">
-            <BackgroundImage
-              className="image"
-              fluid={imageLocalImg.childImageSharp.fluid}
-            />
-          </div>
-        </Col>
-        <Col lg={6} md={6}>
-          <div className="about__content">
-            <h3>{aboutTitle}</h3>
-            <div dangerouslySetInnerHTML={renderHTML(aboutText)}></div>
-          </div>
-        </Col>
-      </Row> */}
-    </div>
+    </>
   )
 }
 

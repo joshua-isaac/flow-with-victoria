@@ -11,9 +11,17 @@ $white: #ffffff;
   padding: 0 15px;
 }
 
+a.anchor {
+  display: block;
+  position: relative;
+  top: -120px;
+  visibility: hidden;
+}
+
 html {
   box-sizing: border-box;
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 html,

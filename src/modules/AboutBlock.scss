@@ -1,12 +1,10 @@
 .about__block {
   margin-bottom: 30px;
+  padding-top: 15px;
   .about__image {
-    margin-right: 30px;
-    float: left;
     .image {
-      width: 375px;
-      height: 375px;
       border-radius: 15px;
+      overflow: hidden;
     }
   }
   .about__content {

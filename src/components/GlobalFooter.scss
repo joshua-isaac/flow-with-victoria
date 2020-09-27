@@ -1,0 +1,39 @@
+.footer {
+  text-align: center;
+  background-color: #fff4fb;
+  padding: 40px 15px 15px 15px;
+  border-radius: 15px;
+  img {
+    max-width: 60px;
+  }
+  h3 {
+    margin: 15px 0;
+  }
+  ul {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    li {
+      margin: 0 20px;
+      svg {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+      }
+    }
+  }
+  .copyright {
+    margin-bottom: 8px;
+  }
+  .copyright,
+  .credits {
+    font-size: 12px;
+    a {
+      transition: 0.3s ease;
+      text-decoration: none;
+      &:hover {
+        border-bottom: 2px solid #3f3d56;
+      }
+    }
+  }
+}

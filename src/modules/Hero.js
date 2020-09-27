@@ -14,7 +14,7 @@ const Hero = ({ item }) => {
               <h1 className="hero__title">{title}</h1>
               <p className="hero__subText">{text}</p>
               <div className="hero__link">
-                <a href="#">{buttonLabel}</a>
+                <a href="#book">{buttonLabel}</a>
               </div>
             </div>
           </Col>

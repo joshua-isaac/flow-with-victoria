@@ -19,6 +19,12 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `${process.env.INSTAGRAM_ID}`,
+      },
+    },
+    {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {

@@ -59,29 +59,32 @@ const Services = ({ item }) => {
   const data = useStaticQuery(SERVICES_QUERY)
   const services = data.allAgilityServices.edges
   return (
-    <div className="services__slider">
-      <h3>{item.customFields.title}</h3>
-      <Slider {...SliderSettings}>
-        {services.map((service, i) => {
-          const { title, icon, description } = service.node.customFields
-          return (
-            <Slide
-              key={i}
-              title={title}
-              icon={icon}
-              description={description}
-            />
-          )
-        })}
-      </Slider>
-      <div className="services__content">
-        <div
-          dangerouslySetInnerHTML={renderHTML(
-            item.customFields.participationPrice
-          )}
-        ></div>
+    <>
+      <a class="anchor" id="services"></a>
+      <div className="services__slider">
+        <h3>{item.customFields.title}</h3>
+        <Slider {...SliderSettings}>
+          {services.map((service, i) => {
+            const { title, icon, description } = service.node.customFields
+            return (
+              <Slide
+                key={i}
+                title={title}
+                icon={icon}
+                description={description}
+              />
+            )
+          })}
+        </Slider>
+        <div className="services__content">
+          <div
+            dangerouslySetInnerHTML={renderHTML(
+              item.customFields.participationPrice
+            )}
+          ></div>
+        </div>
       </div>
-    </div>
+    </>
   )
 }
 

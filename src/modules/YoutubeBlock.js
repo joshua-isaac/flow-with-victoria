@@ -4,7 +4,7 @@ import "./YoutubeBlock.scss"
 
 const YoutubeBlock = ({ item }) => {
   return (
-    <div className="youtube__block">
+    <div className="youtube__block" id="videos">
       <div
         dangerouslySetInnerHTML={renderHTML(item.customFields.youtubeEmbed)}
       ></div>

@@ -54,7 +54,6 @@ const Testimonials = () => {
     <div className="testimonials__block">
       <Slider {...SliderSettings}>
         {testimonials.map((testimonial, i) => {
-          console.log(testimonial)
           const { name, text, imageLocalImg } = testimonial.node.customFields
           return <Slide key={i} name={name} text={text} image={imageLocalImg} />
         })}
