@@ -1,0 +1,32 @@
+.testimonials__block {
+  margin-bottom: 30px;
+  background-color: #dbeddb;
+  padding: 45px 15px;
+  border-radius: 15px;
+  .slider__slide {
+    text-align: center;
+    .image {
+      overflow: hidden;
+      border-radius: 50%;
+    }
+    .text {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+    .name {
+      font-weight: bold;
+      margin: 5px 0 20px 0;
+      font-style: italic;
+    }
+  }
+  .slick-dots {
+    li {
+      width: 30px;
+      height: 30px;
+      button::before {
+        color: #f7cbe6;
+        font-size: 15px;
+      }
+    }
+  }
+}

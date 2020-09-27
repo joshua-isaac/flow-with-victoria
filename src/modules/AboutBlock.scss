@@ -1,0 +1,28 @@
+.about__block {
+  margin-bottom: 30px;
+  .about__image {
+    margin-right: 30px;
+    float: left;
+    .image {
+      width: 375px;
+      height: 375px;
+      border-radius: 15px;
+    }
+  }
+  .about__content {
+    h3,
+    h4 {
+      margin-bottom: 8px;
+    }
+    p {
+      margin-bottom: 16px;
+    }
+    ul {
+      list-style: outside;
+      margin-left: 20px;
+      li {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}

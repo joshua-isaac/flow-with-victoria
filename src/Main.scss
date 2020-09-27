@@ -1,0 +1,100 @@
+$dark_pink: #f7cbe6;
+$light_pink: #fff4fb;
+$dark_green: #c4d6c4;
+$light_green: #dbeddb;
+$dark_purple: #3f3d56;
+$white: #ffffff;
+
+.main-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  font-family: "Montserrat";
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a {
+  color: #3f3d56;
+  transition: 0.3s ease;
+  &:hover {
+    color: #3f3d56;
+  }
+}
+
+body,
+p,
+ol,
+ul,
+span {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  color: #3f3d56;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  color: #3f3d56;
+  letter-spacing: 1.5px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 35px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 25px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 18px;
+}
+
+p {
+  line-height: 1.75;
+}
+
+ol,
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
