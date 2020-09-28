@@ -5,28 +5,24 @@ import { HiMenu } from "react-icons/hi"
 import { CgClose } from "react-icons/cg"
 
 const GlobalHeader = () => {
-  // check for window object
   typeof window !== "undefined" &&
-    // function for sticky header
-    window.addEventListener("scroll", function(event) {
-      var scroll = this.scrollY
-      const header = document.getElementById("header")
-      if (scroll >= 50) {
-        header.classList.add("sticky")
-      } else {
-        header.classList.remove("sticky")
+    window.addEventListener("resize", function(event) {
+      var w = document.documentElement.clientWidth
+      // Display result inside a div element
+      console.log(w)
+      if (w >= 991) {
+        setIsOpen(false)
       }
     })
-  function displayWindowSize() {
-    // Get width and height of the window excluding scrollbars
-    var w = document.documentElement.clientWidth
-    // Display result inside a div element
-    console.log(w)
-    if (w >= 991) {
-      setIsOpen(false)
+  window.addEventListener("scroll", function(event) {
+    var scroll = this.scrollY
+    const header = document.getElementById("header")
+    if (scroll >= 50) {
+      header.classList.add("sticky")
+    } else {
+      header.classList.remove("sticky")
     }
-  }
-  window.addEventListener("resize", displayWindowSize)
+  })
 
   const [isOpen, setIsOpen] = useState(false)
 
