@@ -7,4 +7,9 @@
       border-radius: 15px;
     }
   }
+  .image1 {
+    @media (max-width: 575px) {
+      margin-bottom: 30px;
+    }
+  }
 }

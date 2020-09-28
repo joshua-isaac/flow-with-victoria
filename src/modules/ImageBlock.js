@@ -43,7 +43,7 @@ const ImageBlock = () => {
           </div>
         </Col>
         <Col lg={6} md={6} sm={6}>
-          <div className="image1">
+          <div className="image2">
             <Img
               className="image"
               alt="Yoga Pose"

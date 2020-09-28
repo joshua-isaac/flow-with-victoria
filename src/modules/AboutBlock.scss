@@ -1,16 +1,28 @@
 .about__block {
   margin-bottom: 30px;
-  padding-top: 15px;
   .about__image {
     .image {
       border-radius: 15px;
       overflow: hidden;
     }
+    @media (max-width: 991px) {
+      margin-bottom: 30px;
+    }
   }
   .about__content {
     h3,
     h4 {
-      margin-bottom: 8px;
+      margin-bottom: 16px;
+      position: relative;
+      &:after {
+        content: "";
+        width: 60px;
+        height: 4px;
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        background-color: #c4d6c4;
+      }
     }
     p {
       margin-bottom: 16px;

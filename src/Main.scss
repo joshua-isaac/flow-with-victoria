@@ -11,10 +11,18 @@ $white: #ffffff;
   padding: 0 15px;
 }
 
-a.anchor {
+a.aboutAnchor {
   display: block;
   position: relative;
-  top: -120px;
+  top: -140px;
+  visibility: hidden;
+}
+
+a.servicesAnchor,
+a.videosAnchor {
+  display: block;
+  position: relative;
+  top: -58px;
   visibility: hidden;
 }
 

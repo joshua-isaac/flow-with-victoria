@@ -33,7 +33,7 @@ const AboutBlock = () => {
   } = data.agilityAboutBlock.customFields
   return (
     <>
-      <a className="anchor" id="about"></a>
+      <a className="aboutAnchor" id="about"></a>
       <div className="about__block">
         <Row>
           <Col lg={4} md={4}>

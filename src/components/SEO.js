@@ -11,7 +11,7 @@ const SEO = ({ title, description }) => {
       meta={[
         {
           name: `description`,
-          content: description,
+          content: `Certified Yoga & Barre Instructor helping you find peace, love and gratitude through every session.`,
         },
         {
           name: "keywords",
