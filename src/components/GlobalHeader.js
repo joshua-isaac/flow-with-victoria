@@ -14,15 +14,16 @@ const GlobalHeader = () => {
         setIsOpen(false)
       }
     })
-  window.addEventListener("scroll", function(event) {
-    var scroll = this.scrollY
-    const header = document.getElementById("header")
-    if (scroll >= 50) {
-      header.classList.add("sticky")
-    } else {
-      header.classList.remove("sticky")
-    }
-  })
+  typeof window !== "undefined" &&
+    window.addEventListener("scroll", function(event) {
+      var scroll = this.scrollY
+      const header = document.getElementById("header")
+      if (scroll >= 50) {
+        header.classList.add("sticky")
+      } else {
+        header.classList.remove("sticky")
+      }
+    })
 
   const [isOpen, setIsOpen] = useState(false)
 
