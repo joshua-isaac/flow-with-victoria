@@ -38,6 +38,7 @@ const ImageBlock = () => {
             <Img
               className="image"
               fluid={image1LocalImg.childImageSharp.fluid}
+              alt="Yoga Pose"
             />
           </div>
         </Col>
@@ -45,6 +46,7 @@ const ImageBlock = () => {
           <div className="image1">
             <Img
               className="image"
+              alt="Yoga Pose"
               fluid={image2LocalImg.childImageSharp.fluid}
             />
           </div>

@@ -26,6 +26,10 @@
         li {
           a {
             color: #fff;
+            transition: 0.3s ease;
+            &:hover {
+              color: #f7cbe6;
+            }
           }
         }
         .book__btn {
@@ -36,6 +40,11 @@
             }
           }
         }
+      }
+    }
+    .header__mobile-toggle {
+      svg {
+        color: #fff;
       }
     }
   }
@@ -63,6 +72,9 @@
       }
     }
     .header__menu {
+      @media (max-width: 991px) {
+        display: none;
+      }
       ul {
         display: flex;
         li {
@@ -91,6 +103,51 @@
               background-color: transparent;
               color: #3f3d56;
             }
+          }
+        }
+      }
+    }
+    .header__mobile-toggle {
+      display: none;
+      &:hover {
+        cursor: pointer;
+      }
+      svg {
+        font-size: 28px;
+      }
+      @media (max-width: 991px) {
+        display: block;
+      }
+    }
+  }
+  .header__mobileMenu {
+    height: 0;
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    z-index: 9;
+    ul {
+      background-color: #fff;
+      text-align: center;
+      li {
+        font-weight: bold;
+        margin: 24px 0;
+        a {
+          text-decoration: none;
+        }
+      }
+      .book__btn {
+        a {
+          background-color: #f7cbe6;
+          border: 3px solid #f7cbe6;
+          padding: 8px 30px;
+          border-radius: 20px;
+          font-weight: bold;
+          text-decoration: none;
+          transition: 0.3s ease;
+          &:hover {
+            background-color: transparent;
+            color: #3f3d56;
           }
         }
       }

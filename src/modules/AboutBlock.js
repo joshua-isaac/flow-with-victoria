@@ -41,6 +41,7 @@ const AboutBlock = () => {
               <Img
                 className="image"
                 fluid={imageLocalImg.childImageSharp.fluid}
+                alt="Victoria Portrait"
               />
             </div>
           </Col>

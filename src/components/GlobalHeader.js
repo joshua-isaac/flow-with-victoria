@@ -1,6 +1,8 @@
-import React, { Component } from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import "./GlobalHeader.scss"
+import { HiMenu } from "react-icons/hi"
+import { CgClose } from "react-icons/cg"
 
 const GlobalHeader = () => {
   // check for window object
@@ -15,6 +17,33 @@ const GlobalHeader = () => {
         header.classList.remove("sticky")
       }
     })
+  function displayWindowSize() {
+    // Get width and height of the window excluding scrollbars
+    var w = document.documentElement.clientWidth
+    // Display result inside a div element
+    console.log(w)
+    if (w >= 991) {
+      setIsOpen(false)
+    }
+  }
+  window.addEventListener("resize", displayWindowSize)
+
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleOpen = () => {
+    setIsOpen(!isOpen)
+  }
+
+  const mobileMenuStyle = {
+    overflow: "hidden",
+    height: isOpen ? 275 : 0,
+    transition: "0.3s",
+  }
+
+  const dropdownStyle = {
+    height: isOpen ? `auto` : `unset`,
+  }
+
   return (
     <header className="header" id="header">
       <div className="header__container">
@@ -44,6 +73,28 @@ const GlobalHeader = () => {
             </li>
           </ul>
         </div>
+        <div className="header__mobile-toggle" onClick={handleOpen}>
+          {isOpen ? <CgClose /> : <HiMenu />}
+        </div>
+      </div>
+      <div class="header__mobileMenu" style={mobileMenuStyle}>
+        <ul>
+          <li onClick={handleOpen}>
+            <a href="#home">Home</a>
+          </li>
+          <li onClick={handleOpen}>
+            <a href="#about">About</a>
+          </li>
+          <li onClick={handleOpen}>
+            <a href="#services">Services</a>
+          </li>
+          <li onClick={handleOpen}>
+            <a href="#videos">Videos</a>
+          </li>
+          <li className="book__btn" onClick={handleOpen}>
+            <a href="#book">Book</a>
+          </li>
+        </ul>
       </div>
     </header>
   )
