@@ -73,5 +73,18 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: { name: `images`, path: `./src/img/` },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Flow With Victoria`,
+        short_name: `Flow With Victoria`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#ffffff`,
+        display: `minimal-ui`,
+        icon: `src/img/flower.svg`,
+      },
+    },
+    `gatsby-plugin-offline`,
   ],
 }
