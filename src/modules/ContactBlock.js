@@ -22,6 +22,7 @@ const ContactBlock = ({ item }) => {
                 method="post"
                 data-netlify-honeypot="botfield"
                 data-netlify="true"
+                action="/thank-you"
               >
                 <input type="hidden" name="form-name" value="contact" />
                 <Form.Group as={Row}>
