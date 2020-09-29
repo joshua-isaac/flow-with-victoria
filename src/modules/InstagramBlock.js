@@ -2,6 +2,9 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Row, Col } from "react-bootstrap"
 import Img from "gatsby-image"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 import "./InstagramBlock.scss"
 
 const INSTAGRAM_QUERY = graphql`
@@ -12,13 +15,7 @@ const INSTAGRAM_QUERY = graphql`
           id
           localFile {
             childImageSharp {
-              fluid(
-                maxWidth: 800
-                maxHeight: 800
-                quality: 90
-                cropFocus: CENTER
-                fit: COVER
-              ) {
+              fluid(maxWidth: 400, maxHeight: 400, quality: 90) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -33,12 +30,36 @@ const InstagramBlock = ({ item }) => {
   const data = useStaticQuery(INSTAGRAM_QUERY)
   const instagram = data.allInstaNode.edges
   const baseUrl = `https://www.instagram.com/p`
+  const sliderSettings = {
+    autoplay: true,
+    autoplaySpeed: 2500,
+    arrows: false,
+    dots: false,
+    infinite: true,
+    slidesToShow: 3,
+  }
 
   return (
     <>
       {item.customFields.toggleInstagram ? (
         <div className="instagram__block">
-          <Row>
+          <Slider {...sliderSettings}>
+            {instagram.map((post, i) => (
+              <a
+                href={`${baseUrl}/${post.node.id}`}
+                target="_blank"
+                rel="noreferrer noopener"
+                key={i}
+                aria-label="Instagram Image"
+              >
+                <Img
+                  className="image"
+                  fluid={post.node.localFile.childImageSharp.fluid}
+                />
+              </a>
+            ))}
+          </Slider>
+          {/* <Row>
             {instagram.map((post, i) => (
               <Col lg={4} md={4} sm={6} key={i}>
                 <a
@@ -55,7 +76,7 @@ const InstagramBlock = ({ item }) => {
                 </a>
               </Col>
             ))}
-          </Row>
+          </Row> */}
         </div>
       ) : null}
     </>

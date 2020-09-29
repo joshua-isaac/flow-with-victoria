@@ -1,7 +1,14 @@
 .instagram__block {
+  overflow: hidden;
+  margin-bottom: 20px;
+  .slick-list {
+    margin: 0 -15px;
+  }
+  .slick-slide > div {
+    padding: 0 15px;
+  }
   .image {
     overflow: hidden;
     border-radius: 15px;
-    margin-bottom: 30px;
   }
 }

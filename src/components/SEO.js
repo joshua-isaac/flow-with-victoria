@@ -1,5 +1,6 @@
 import React from "react"
 import { Helmet } from "react-helmet"
+import ogImage from "../img/og-img.png"
 
 const SEO = ({ title, description }) => {
   return (
@@ -49,15 +50,15 @@ const SEO = ({ title, description }) => {
         },
         {
           property: `og:image`,
-          content: ``,
+          content: ogImage,
         },
         {
           property: `twitter:image`,
-          content: ``,
+          content: ogImage,
         },
         {
           property: `image`,
-          content: ``,
+          content: ogImage,
         },
       ]}
     />

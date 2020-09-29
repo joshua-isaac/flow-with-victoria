@@ -4,7 +4,7 @@ import "./Hero.scss"
 
 const Hero = ({ item }) => {
   const { customFields } = item
-  const { image, title, text, buttonLabel } = customFields
+  const { image, title, text, buttonLabel, buttonLink } = customFields
   return (
     <div className="home__hero">
       <div className="hero__content">
@@ -14,7 +14,9 @@ const Hero = ({ item }) => {
               <h1 className="hero__title">{title}</h1>
               <p className="hero__subText">{text}</p>
               <div className="hero__link">
-                <a href="#book">{buttonLabel}</a>
+                <a href={buttonLink.href} title={buttonLink.text}>
+                  {buttonLabel}
+                </a>
               </div>
             </div>
           </Col>

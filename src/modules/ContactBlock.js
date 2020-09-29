@@ -31,7 +31,7 @@ const ContactBlock = ({ item }) => {
                       name="firstName"
                       placeholder="First Name"
                       required
-                      className="name-input"
+                      className="mb"
                     />
                   </Col>
                   <Col lg={6} md={6}>
@@ -40,7 +40,6 @@ const ContactBlock = ({ item }) => {
                       name="lastName"
                       placeholder="Last Name"
                       required
-                      className="name-input"
                     />
                   </Col>
                 </Form.Group>
@@ -51,6 +50,7 @@ const ContactBlock = ({ item }) => {
                       name="phone"
                       placeholder="Phone"
                       required
+                      className="mb"
                     />
                   </Col>
                   <Col lg={6} md={6}>
@@ -64,7 +64,7 @@ const ContactBlock = ({ item }) => {
                 </Form.Group>
                 <Form.Group as={Row}>
                   <Col lg={12}>
-                    <Form.Control as="select">
+                    <Form.Control as="select" name="interest">
                       <option default>I'm Interested In...</option>
                       <option name="gentleHatha" value="Gentle Hatha">
                         Gentle Hatha
@@ -77,6 +77,9 @@ const ContactBlock = ({ item }) => {
                       </option>
                       <option name="barre" value="Barre">
                         Barre
+                      </option>
+                      <option name="question" value="Question">
+                        Asking a question
                       </option>
                     </Form.Control>
                   </Col>
