@@ -37,6 +37,14 @@ const InstagramBlock = ({ item }) => {
     dots: false,
     infinite: true,
     slidesToShow: 3,
+    responsive: [
+      {
+        breakpoint: 769,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
   }
 
   return (
