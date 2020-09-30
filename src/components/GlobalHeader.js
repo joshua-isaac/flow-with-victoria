@@ -62,9 +62,9 @@ const GlobalHeader = () => {
             <li>
               <a href="#services">Services</a>
             </li>
-            <li>
+            {/* <li>
               <a href="#videos">Videos</a>
-            </li>
+            </li> */}
             <li className="book__btn">
               <a href="#book">Book</a>
             </li>
@@ -85,9 +85,9 @@ const GlobalHeader = () => {
           <li onClick={handleOpen}>
             <a href="#services">Services</a>
           </li>
-          <li onClick={handleOpen}>
+          {/* <li onClick={handleOpen}>
             <a href="#videos">Videos</a>
-          </li>
+          </li> */}
           <li className="book__btn" onClick={handleOpen}>
             <a href="#book">Book</a>
           </li>
