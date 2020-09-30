@@ -6,43 +6,44 @@ import "slick-carousel/slick/slick-theme.css"
 import Img from "gatsby-image"
 import "./Testimonials.scss"
 
-const TESTIMONIALS_QUERY = graphql`
-  query {
-    allAgilityTestimonials(
-      filter: { properties: { referenceName: { eq: "testimonials" } } }
-    ) {
-      edges {
-        node {
-          customFields {
-            name
-            text
-            imageLocalImg {
-              childImageSharp {
-                fixed(quality: 90, width: 80, height: 80) {
-                  ...GatsbyImageSharpFixed
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+// const TESTIMONIALS_QUERY = graphql`
+//   query {
+//     allAgilityTestimonials(
+//       filter: { properties: { referenceName: { eq: "testimonials" } } }
+//     ) {
+//       edges {
+//         node {
+//           customFields {
+//             name
+//             text
+//             imageLocalImg {
+//               childImageSharp {
+//                 fixed(quality: 90, width: 80, height: 80) {
+//                   ...GatsbyImageSharpFixed
+//                 }
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
 const Slide = ({ name, text, image }) => {
   return (
     <div className="slider__slide">
-      <Img className="image" fixed={image.childImageSharp.fixed} />
+      {/* <Img className="image" fixed={image.childImageSharp.fixed} /> */}
       <p className="text">{text}</p>
       <p className="name">{name}</p>
     </div>
   )
 }
 
-const Testimonials = () => {
-  const data = useStaticQuery(TESTIMONIALS_QUERY)
-  const testimonials = data.allAgilityTestimonials.edges
+const Testimonials = props => {
+  console.log(props)
+  // const data = useStaticQuery(TESTIMONIALS_QUERY)
+  // const testimonials = data.allAgilityTestimonials.edges
   const SliderSettings = {
     dots: true,
     arrows: false,
@@ -52,12 +53,12 @@ const Testimonials = () => {
   }
   return (
     <div className="testimonials__block">
-      <Slider {...SliderSettings}>
+      {/* <Slider {...SliderSettings}>
         {testimonials.map((testimonial, i) => {
           const { name, text, imageLocalImg } = testimonial.node.customFields
           return <Slide key={i} name={name} text={text} image={imageLocalImg} />
         })}
-      </Slider>
+      </Slider> */}
     </div>
   )
 }
