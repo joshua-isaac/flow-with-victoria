@@ -1,7 +1,7 @@
 .testimonials__block {
   margin-bottom: 20px;
   background-color: #dbeddb;
-  padding: 45px 15px;
+  padding: 25px;
   border-radius: 15px;
   .slider__slide {
     text-align: center;
@@ -15,11 +15,12 @@
     }
     .name {
       font-weight: bold;
-      margin: 5px 0 20px 0;
       font-style: italic;
     }
   }
   .slick-dots {
+    position: unset;
+    margin-top: 15px;
     li {
       width: 30px;
       height: 30px;

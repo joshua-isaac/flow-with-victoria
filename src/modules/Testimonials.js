@@ -40,8 +40,9 @@ const Testimonials = () => {
     dots: true,
     arrows: false,
     slidesToShow: 1,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 4500,
+    adaptiveHeight: true,
   }
   return (
     <div className="testimonials__block">
