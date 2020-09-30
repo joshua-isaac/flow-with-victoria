@@ -11,14 +11,14 @@ const IMAGE_BLOCK_QUERY = graphql`
         image1LocalImg {
           childImageSharp {
             fluid(quality: 90, maxWidth: 800, maxHeight: 800) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
         image2LocalImg {
           childImageSharp {
             fluid(quality: 90, maxWidth: 800, maxHeight: 800) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }

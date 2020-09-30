@@ -16,7 +16,7 @@ const INSTAGRAM_QUERY = graphql`
           localFile {
             childImageSharp {
               fluid(maxWidth: 400, maxHeight: 400, quality: 90) {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }

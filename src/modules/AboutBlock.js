@@ -13,7 +13,7 @@ const ABOUT_QUERY = graphql`
         imageLocalImg {
           childImageSharp {
             fluid(quality: 90, maxWidth: 350, maxHeight: 350) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
