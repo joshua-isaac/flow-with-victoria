@@ -5,9 +5,9 @@
   border-radius: 15px;
   .slider__slide {
     text-align: center;
-    .image {
-      overflow: hidden;
-      border-radius: 50%;
+    img {
+      display: unset;
+      margin-bottom: 15px;
     }
     .text {
       max-width: 850px;
