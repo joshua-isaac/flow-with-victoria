@@ -80,7 +80,7 @@ const Services = ({ item }) => {
             )
           })}
         </Slider>
-        <p>{slideCount} / {services.length}</p>
+        {/* <p>{slideCount} / {services.length}</p> */}
         <div className="services__content">
           <div
             dangerouslySetInnerHTML={renderHTML(
