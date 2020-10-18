@@ -74,7 +74,7 @@ const GlobalHeader = () => {
           {isOpen ? <CgClose /> : <HiMenu />}
         </div>
       </div>
-      <div class="header__mobileMenu" style={mobileMenuStyle}>
+      <div className="header__mobileMenu" style={mobileMenuStyle}>
         <ul>
           <li onClick={handleOpen}>
             <a href="#home">Home</a>

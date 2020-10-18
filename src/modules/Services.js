@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import "./Services.scss"
 import Slider from "react-slick"
@@ -28,6 +28,7 @@ const SERVICES_QUERY = graphql`
 `
 
 const Slide = ({ title, icon, description }) => {
+  const [slideCount, setSlideCount] = useState(0)
   return (
     <div className="slider__slide">
       <div className="slide__title">
@@ -55,12 +56,15 @@ const Services = ({ item }) => {
         },
       },
     ],
+    beforeChange: (next) => {
+      setSlideCount(next * 2);
+    }
   }
   const data = useStaticQuery(SERVICES_QUERY)
   const services = data.allAgilityServices.edges
   return (
     <>
-      <a class="servicesAnchor" id="services"></a>
+      <a className="servicesAnchor" id="services"></a>
       <div className="services__slider">
         <h3>{item.customFields.title}</h3>
         <Slider {...SliderSettings}>
@@ -76,6 +80,7 @@ const Services = ({ item }) => {
             )
           })}
         </Slider>
+        <p>{slideCount} / {services.length}</p>
         <div className="services__content">
           <div
             dangerouslySetInnerHTML={renderHTML(

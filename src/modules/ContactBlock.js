@@ -1,9 +1,33 @@
 import React from "react"
 import { Row, Col, Form } from "react-bootstrap"
+import { graphql, useStaticQuery } from 'gatsby'
 import "./ContactBlock.scss"
+
+const SERVICES_QUERY = graphql`
+  query {
+    allAgilityServices(
+      filter: { properties: { referenceName: { eq: "services" } } }
+    ) {
+      edges {
+        node {
+          customFields {
+            title
+            icon {
+              label
+              url
+            }
+            description
+          }
+        }
+      }
+    }
+  }
+`
 
 const ContactBlock = ({ item }) => {
   const { image, title } = item.customFields
+  const data = useStaticQuery(SERVICES_QUERY);
+  const services = data.allAgilityServices.edges;
   return (
     <>
       <a className="anchor" id="book"></a>
@@ -67,18 +91,11 @@ const ContactBlock = ({ item }) => {
                   <Col lg={12}>
                     <Form.Control as="select" name="interest">
                       <option default>I'm Interested In...</option>
-                      <option name="gentleHatha" value="Gentle Hatha">
-                        Gentle Hatha
-                      </option>
-                      <option name="vinyasaFlowL2" value="Vinyasa Flow L2">
-                        Vinyasa Flow L2
-                      </option>
-                      <option name="hathaL1L2" value="Hatha L1 - L2">
-                        Hatha L1 - L2
-                      </option>
-                      <option name="barre" value="Barre">
-                        Barre
-                      </option>
+                      {services.map((service, i) => (
+                        <option name="question" value={`${service.node.customFields.title}`} key={i}>
+                          {service.node.customFields.title}
+                        </option>
+                      ))}
                       <option name="question" value="Question">
                         Asking a question
                       </option>
@@ -93,7 +110,7 @@ const ContactBlock = ({ item }) => {
                     placeholder="Message..."
                   />
                 </Form.Group>
-                <button class="contact__form-btn">Submit</button>
+                <button className="contact__form-btn">Submit</button>
               </form>
             </div>
           </Col>
