@@ -1,9 +1,9 @@
 .about__block {
   margin-bottom: 30px;
   .about__image {
-    .image {
+    .gatsby-image-wrapper {
       border-radius: 15px;
-      overflow: hidden;
+      width: 100%;
     }
     @media (max-width: 991px) {
       margin-bottom: 30px;

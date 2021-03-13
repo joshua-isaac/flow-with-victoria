@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import "./GlobalFooter.scss"
-import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa"
+import { FaInstagram, FaYoutube } from "react-icons/fa"
 
 const FOOTER_QUERY = graphql`
   query {
@@ -36,7 +36,6 @@ const GlobalFooter = () => {
   var year = day.getFullYear()
   const data = useStaticQuery(FOOTER_QUERY)
   const {
-    facebookLink,
     youtubeLink,
     instagramLink,
     text,

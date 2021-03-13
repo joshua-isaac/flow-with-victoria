@@ -13,13 +13,15 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
-    "@agility/gatsby-source-agilitycms": "^1.4.0",
+    "@agility/gatsby-image-agilitycms": "^1.0.0",
+    "@agility/gatsby-source-agilitycms": "^3.0.0",
     "babel-plugin-styled-components": "^1.11.1",
     "bootstrap": "^4.5.2",
     "dotenv": "^8.1.0",
-    "gatsby": "^2.21.4",
+    "gatsby": "^3.0.0",
     "gatsby-background-image": "^1.1.2",
     "gatsby-image": "^2.3.2",
+    "gatsby-plugin-image": "^1.0.1",
     "gatsby-plugin-manifest": "^2.4.31",
     "gatsby-plugin-netlify": "^2.1.33",
     "gatsby-plugin-offline": "^3.2.28",
