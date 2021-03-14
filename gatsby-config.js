@@ -18,12 +18,6 @@ module.exports = {
     `gatsby-plugin-netlify`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
-    // {
-    //   resolve: `gatsby-source-instagram`,
-    //   options: {
-    //     username: `${process.env.INSTAGRAM_ID}`,
-    //   },
-    // },
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
@@ -69,6 +63,7 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: { name: `images`, path: `./src/img/` },

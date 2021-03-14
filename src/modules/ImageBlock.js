@@ -1,7 +1,6 @@
 import { useStaticQuery, graphql } from "gatsby"
 import React from "react"
 import { Row, Col } from "react-bootstrap"
-import Img from "gatsby-image"
 import { AgilityImage } from "@agility/gatsby-image-agilitycms"
 
 import "./ImageBlock.scss"

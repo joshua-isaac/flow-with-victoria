@@ -50,54 +50,54 @@ const GlobalHeader = () => {
         <div className="header__menu">
           <ul>
             <li>
-              <a href="#home">Home</a>
+              <a href="/#home">Home</a>
             </li>
             <li>
-              <a href="#about">About</a>
+              <a href="/#about">About</a>
             </li>
             <li>
-              <a href="#services">Services</a>
+              <a href="/#services">Services</a>
             </li>
             <li>
-              <a href="#videos">Videos</a>
+              <a href="/videos">Videos</a>
             </li>
             <li className="book__btn">
-              <a href="#book">Book</a>
+              <a href="/#book">Book</a>
             </li>
           </ul>
         </div>
-        <div
+        <button
           className="header__mobile-toggle"
           onClick={handleOpen}
           onKeyDown={handleOpen}
         >
           {isOpen ? <CgClose /> : <HiMenu />}
-        </div>
+        </button>
       </div>
       <div className="header__mobileMenu" style={mobileMenuStyle}>
         <ul>
           <li>
-            <a href="#home" onClick={handleOpen} onKeyDown={handleOpen}>
+            <a href="/#home" onClick={handleOpen} onKeyDown={handleOpen}>
               Home
             </a>
           </li>
           <li>
-            <a href="#about" onClick={handleOpen} onKeyDown={handleOpen}>
+            <a href="/#about" onClick={handleOpen} onKeyDown={handleOpen}>
               About
             </a>
           </li>
           <li>
-            <a href="#services" onClick={handleOpen} onKeyDown={handleOpen}>
+            <a href="/#services" onClick={handleOpen} onKeyDown={handleOpen}>
               Services
             </a>
           </li>
           <li>
-            <a href="#videos" onClick={handleOpen} onKeyDown={handleOpen}>
+            <a href="/videos" onClick={handleOpen} onKeyDown={handleOpen}>
               Videos
             </a>
           </li>
           <li className="book__btn">
-            <a href="#book" onClick={handleOpen} onKeyDown={handleOpen}>
+            <a href="/#book" onClick={handleOpen} onKeyDown={handleOpen}>
               Book
             </a>
           </li>

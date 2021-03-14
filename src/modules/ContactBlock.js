@@ -30,7 +30,7 @@ const ContactBlock = ({ item }) => {
   const services = data.allAgilityServices.edges;
   return (
     <>
-      <a className="anchor" id="book"></a>
+      <a className="anchor" id="book" href="#/"> </a>
       <div className="contact__block">
         <Row>
           <Col lg={6}>

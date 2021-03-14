@@ -43,6 +43,7 @@
       }
     }
     .header__mobile-toggle {
+      background-color: #3f3d56;
       svg {
         color: #fff;
       }
@@ -110,11 +111,14 @@
     }
     .header__mobile-toggle {
       display: none;
+      border: none;
+      background-color: #FFF;
       &:hover {
         cursor: pointer;
       }
       svg {
         font-size: 28px;
+        color: rgba(63, 61, 86, 1);
       }
       @media (max-width: 991px) {
         display: block;

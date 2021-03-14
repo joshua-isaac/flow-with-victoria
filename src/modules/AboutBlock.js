@@ -25,7 +25,7 @@ const AboutBlock = () => {
   const { aboutTitle, aboutText, image } = data.agilityAboutBlock.customFields
   return (
     <>
-      <a className="aboutAnchor" id="about"></a>
+      <a className="aboutAnchor" id="about" href="#/"> </a>
       <div className="about__block">
         <Row>
           <Col lg={4} md={4}>

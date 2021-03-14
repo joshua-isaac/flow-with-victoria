@@ -14,7 +14,7 @@ const Hero = ({ item }) => {
               <h1 className="hero__title">{title}</h1>
               <p className="hero__subText">{text}</p>
               <div className="hero__link">
-                <a href={buttonLink.href} title={buttonLink.text}>
+                <a href={buttonLink.href} title={buttonLink.text} target={buttonLink.target}>
                   {buttonLabel}
                 </a>
               </div>

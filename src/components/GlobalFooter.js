@@ -7,11 +7,6 @@ const FOOTER_QUERY = graphql`
   query {
     agilityGlobalFooter {
       customFields {
-        facebookLink {
-          href
-          target
-          text
-        }
         youtubeLink {
           href
           target

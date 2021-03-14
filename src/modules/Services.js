@@ -60,7 +60,7 @@ const Services = ({ item }) => {
   const services = data.allAgilityServices.edges
   return (
     <>
-      <a className="servicesAnchor" id="services"></a>
+      <a className="servicesAnchor" id="services" href="#/"> </a>
       <div className="services__slider">
         <h3>{item.customFields.title}</h3>
         <Slider {...SliderSettings}>
