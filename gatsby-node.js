@@ -20,11 +20,6 @@ exports.createResolvers = args => {
       linkedContent_gallery: agility.getLinkedContentList({ type: "agilityImage", linkedContentFieldName: "gallery"})
     },
 
-    // get linked videos
-    agilityVideosListBlock: {
-      linkedContent_videoList: agility.getLinkedContentList({ type: "agilityVideo", linkedContentFieldName: "videosList"})
-    },
-
   }
   createResolvers(resolvers)
 }

@@ -5,18 +5,18 @@ import "./YoutubeListBlock.scss"
 const VideosListBlock = () => {
   const data = useStaticQuery(graphql`
   query {
-    agilityVideosListBlock(contentID: {eq: 77}) {
-      linkedContent_videoList {
+    allAgilityVideo {
+      nodes {
         customFields {
           title
           videoID
         }
       }
     }
-  }
+  }  
   `)
 
-  const { linkedContent_videoList: videos } = data.agilityVideosListBlock
+  const { nodes: videos } = data.allAgilityVideo
 
   return (
     <div className="youtube-list__block">
