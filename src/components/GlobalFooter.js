@@ -64,12 +64,12 @@ const GlobalFooter = () => {
       <p className="credits">
         Website By {""}
         <a
-          href="https://www.joshuaisaac.ca"
+          href="https://www.webdisco.digital"
           title="Toronto Web Design"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Joshua Isaac
+          Web Disco
         </a>
       </p>
     </footer>
