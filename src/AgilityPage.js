@@ -25,11 +25,6 @@ export const query = graphql`
     }
     agilityGlobalHeader {
       customFields {
-        primaryButton {
-          href
-          text
-          target
-        }
         siteName
       }
     }

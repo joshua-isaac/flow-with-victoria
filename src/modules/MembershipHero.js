@@ -4,9 +4,9 @@ import "./Hero.scss"
 
 const MembershipHero = ({ item }) => {
   const { customFields } = item
-  console.log(customFields)
+
   const { image, title, text, membershipPlan } = customFields
-  console.log(membershipPlan)
+
   return (
     <div className="home__hero">
       <div className="hero__content">

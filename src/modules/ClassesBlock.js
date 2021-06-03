@@ -73,8 +73,6 @@ const ClassesBlock = props => {
     setActive(newTab)
   }
 
-  console.log(active)
-
   return (
     <div className="classes_tabs">
       <div className="tab__buttons">
@@ -97,7 +95,6 @@ const ClassesBlock = props => {
                 <div key={tab.type} className="schedule__tab">
                   <h1>{active.type}</h1>
                   {active.content.nodes.map((node, i) => {
-                    console.log(node)
                     return (
                       <div className="schedule__tab-item" key={i}>
                         <h4 className="schedule__tab-date">
