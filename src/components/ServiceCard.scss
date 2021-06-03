@@ -1,0 +1,35 @@
+.service__card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  h5 {
+    margin-bottom: 15px;
+  }
+  p {
+    margin-bottom: 25px;
+  }
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .service__card-link {
+    font-size: 12px;
+    background-color: #f7cbe6;
+    border: 3px solid #f7cbe6;
+    padding: 4px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+    &:hover {
+      background-color: transparent;
+      text-decoration: none;
+    }
+  }
+  .gatsby-image-wrapper {
+    border-radius: 15px;
+  }
+}

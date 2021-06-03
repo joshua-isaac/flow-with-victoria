@@ -23,6 +23,16 @@ export const query = graphql`
     ) {
       itemJson
     }
+    agilityGlobalHeader {
+      customFields {
+        primaryButton {
+          href
+          text
+          target
+        }
+        siteName
+      }
+    }
   }
 `
 const AgilityPage = ({ pageContext, data }) => {
@@ -37,6 +47,7 @@ const AgilityPage = ({ pageContext, data }) => {
       <GlobalHeader
         languageCode={viewModel.languageCode}
         isMultiLanguage={viewModel.isMultiLanguage}
+        header={data.agilityGlobalHeader}
       />
       <main className="main">
         <AgilityPageTemplate {...viewModel} />
