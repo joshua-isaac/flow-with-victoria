@@ -43,6 +43,10 @@ const ClassesBlock = props => {
             title
             price
             description
+            image {
+              url
+              label
+            }
           }
         }
       }
@@ -163,11 +167,14 @@ const ClassesBlock = props => {
                         className="snipcart-add-item"
                         data-item-id={membershipPlan.customFields.name}
                         data-item-name={membershipPlan.customFields.name}
+                        data-item-image={membershipPlan.customFields.image}
                         data-item-price={
                           membershipPlan.customFields.monthlyPlanPrice
                         }
                         data-item-url="/classes"
-                        data-item-description="to-do"
+                        data-item-description={
+                          membershipPlan.customFields.description
+                        }
                         data-item-selected-plan="weekly-plan"
                         // Weekly Plan
                         data-plan1-id="weekly-plan"
@@ -213,7 +220,7 @@ const ClassesBlock = props => {
                             data-item-description={
                               node.customFields.description
                             }
-                            // data-item-image={node.customFields?.image?.url}
+                            data-item-image={node.customFields?.image.url}
                             data-item-name={node.customFields.title}
                           >
                             Sign Up

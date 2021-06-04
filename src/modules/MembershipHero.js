@@ -22,11 +22,14 @@ const MembershipHero = ({ item }) => {
                     className="snipcart-add-item"
                     data-item-id={membershipPlan.customFields.name}
                     data-item-name={membershipPlan.customFields.name}
+                    data-item-image={membershipPlan.customFields?.image.url}
                     data-item-price={
                       membershipPlan.customFields.monthlyPlanPrice
                     }
                     data-item-url="/classes"
-                    data-item-description="to-do"
+                    data-item-description={
+                      membershipPlan.customFields.description
+                    }
                     data-item-selected-plan="weekly-plan"
                     // Weekly Plan
                     data-plan1-id="weekly-plan"
@@ -51,22 +54,6 @@ const MembershipHero = ({ item }) => {
                   >
                     Sign Up For Membership
                   </button>
-                  // <button
-                  //   class="snipcart-add-item"
-                  //   data-item-id={membershipPlan.customFields.name}
-                  //   data-item-name={membershipPlan.customFields.name}
-                  //   data-item-price="30"
-                  //   data-item-url="/classes"
-                  //   data-item-description="Painting lessons - 1h"
-                  //   data-item-selected-plan={`${membershipPlan.customFields.frequency}-plan`}
-                  //   data-plan1-id={`${membershipPlan.customFields.frequency}-plan`}
-                  //   data-plan1-name={`${membershipPlan.customFields.name} (${membershipPlan.customFields.frequency})`}
-                  //   data-plan1-frequency={membershipPlan.customFields.frequency}
-                  //   data-plan1-interval={membershipPlan.customFields.interval}
-                  //   data-item-plan1-price="20"
-                  // >
-                  //   Sign Up For Membership
-                  // </button>
                 )}
               </div>
             </div>
