@@ -5,6 +5,16 @@ $light_green: #dbeddb;
 $dark_purple: #3f3d56;
 $white: #ffffff;
 
+// #snipcart {
+//   --color-primary: #978459;
+//   --color-secondary: #4d4d49;
+//   --color-light: #dfdac5;
+//   --color-dark: #2a2a28;
+//   /* snipcart variables */
+//   --bgColor-default: red !important;
+//   --color-buttonPrimary: red !important;
+// }
+
 .main-wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -45,10 +55,10 @@ body {
 }
 
 a {
-  color: #3f3d56;
+  color: $dark_purple;
   transition: 0.3s ease;
   &:hover {
-    color: #3f3d56;
+    color: $dark_purple;
   }
 }
 
@@ -60,7 +70,7 @@ span {
   margin: 0;
   padding: 0;
   font-weight: normal;
-  color: #3f3d56;
+  color: $dark_purple;
 }
 h1,
 h2,
@@ -71,7 +81,7 @@ h6 {
   margin: 0;
   padding: 0;
   font-weight: 700;
-  color: #3f3d56;
+  color: $dark_purple;
   letter-spacing: 1.5px;
 }
 

@@ -1,0 +1,15 @@
+.services__listing {
+  h3 {
+    margin-bottom: 40px;
+    position: relative;
+    &:after {
+      content: "";
+      width: 60px;
+      height: 4px;
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      background-color: #c4d6c4;
+    }
+  }
+}

@@ -1,0 +1,101 @@
+.classes_tabs {
+  max-width: 800px;
+  margin: 0 auto;
+  .tab__buttons {
+    margin-bottom: 60px;
+    button {
+      background-color: #fff;
+      border: none;
+      outline: none;
+      border-radius: 15px;
+      padding: 4px 15px;
+      font-weight: bold;
+      margin-right: 15px;
+      font-size: 12px;
+    }
+    .active {
+      background-color: #c4d6c4;
+      border: 3px solid #c4d6c4;
+      padding: 4px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-right: 15px;
+      font-size: 12px;
+    }
+  }
+  .tab__content {
+    h1 {
+      margin-bottom: 40px;
+      position: relative;
+      &:after {
+        content: "";
+        width: 60px;
+        height: 4px;
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        background-color: #c4d6c4;
+      }
+    }
+    .schedule__tab {
+      .schedule__tab-item {
+        margin-bottom: 60px;
+        .schedule__tab-date {
+          font-weight: 300;
+          margin-bottom: 5px;
+        }
+        .schedule__tab-title {
+          font-weight: 600;
+          margin-bottom: 15px;
+        }
+        .schedule__tab-description {
+          margin-bottom: 15px;
+        }
+        .snipcart-add-item {
+          outline: none;
+          background-color: #f7cbe6;
+          border: 3px solid #f7cbe6;
+          padding: 4px 15px;
+          font-size: 14px;
+          border-radius: 20px;
+          font-weight: bold;
+          text-decoration: none;
+          transition: 0.3s ease;
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+    .other__tab {
+      .other__tab-item {
+        margin-bottom: 60px;
+      }
+      .other__tab-title {
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+      .other__tab-price {
+        font-weight: 300;
+        margin-bottom: 15px;
+      }
+      .other__tab-description {
+        margin-bottom: 15px;
+      }
+      .snipcart-add-item {
+        outline: none;
+        background-color: #f7cbe6;
+        border: 3px solid #f7cbe6;
+        padding: 4px 15px;
+        font-size: 14px;
+        border-radius: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.3s ease;
+        &:hover {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}

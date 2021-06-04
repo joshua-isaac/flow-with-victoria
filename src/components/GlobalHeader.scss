@@ -9,6 +9,21 @@
   background-color: #fff;
   z-index: 9;
   right: 0;
+  .header__snipcart-actions {
+    text-align: right;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #3f3d56;
+    padding: 12px 15px;
+    button {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      svg {
+        color: #fff;
+      }
+    }
+  }
   .header__container {
     max-width: 1200px;
     margin: 0 auto;
@@ -31,21 +46,32 @@
               color: #f7cbe6;
             }
           }
-        }
-        .book__btn {
-          a {
-            color: #3f3d56;
-            &:hover {
+          button {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            position: relative;
+            svg {
               color: #fff;
+              font-size: 16px;
             }
           }
         }
       }
     }
-    .header__mobile-toggle {
-      background-color: #3f3d56;
-      svg {
-        color: #fff;
+    .header__mobile {
+      li {
+        button {
+          svg {
+            color: #fff;
+          }
+        }
+      }
+      .header__mobile-toggle {
+        background-color: transparent;
+        svg {
+          color: #fff;
+        }
       }
     }
   }
@@ -59,6 +85,7 @@
     display: flex;
     justify-content: space-between;
     padding: 25px 0;
+    align-items: center;
     transition: 0.3s ease;
     .header__logo {
       a {
@@ -90,42 +117,74 @@
               color: #f7cbe6;
             }
           }
-        }
-        .book__btn {
-          margin-right: 0;
-          a {
-            background-color: #f7cbe6;
-            border: 3px solid #f7cbe6;
-            padding: 8px 30px;
-            border-radius: 20px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: 0.3s ease;
-            &:hover {
-              background-color: transparent;
+          a.active {
+            border-bottom: 3px solid #f7cbe6;
+          }
+          button {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            position: relative;
+            top: -2px;
+            svg {
               color: #3f3d56;
+              font-size: 16px;
+              transition: 0.3s ease;
+            }
+            &:hover {
+              svg {
+                color: #f7cbe6;
+              }
             }
           }
         }
+        li:last-child {
+          margin-right: 0;
+        }
       }
     }
-    .header__mobile-toggle {
+    .header__mobile {
       display: none;
-      border: none;
-      background-color: #FFF;
-      &:hover {
-        cursor: pointer;
-      }
-      svg {
-        font-size: 28px;
-        color: rgba(63, 61, 86, 1);
-      }
       @media (max-width: 991px) {
-        display: block;
+        display: flex;
+      }
+      li {
+        margin-right: 15px;
+        @media (max-width: 575px) {
+          margin-right: 5px;
+        }
+        button {
+          background-color: transparent;
+          border: none;
+          outline: none;
+          position: relative;
+          top: -2px;
+          svg {
+            color: #3f3d56;
+            font-size: 24px;
+          }
+        }
+      }
+      li:last-child {
+        margin-right: 0;
+      }
+      .header__mobile-toggle {
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        &:hover {
+          cursor: pointer;
+        }
+        svg {
+          font-size: 28px;
+          color: rgba(63, 61, 86, 1);
+        }
       }
     }
   }
   .header__mobileMenu {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
     height: 0;
     position: absolute;
     background-color: #fff;
@@ -139,21 +198,6 @@
         margin: 24px 0;
         a {
           text-decoration: none;
-        }
-      }
-      .book__btn {
-        a {
-          background-color: #f7cbe6;
-          border: 3px solid #f7cbe6;
-          padding: 8px 30px;
-          border-radius: 20px;
-          font-weight: bold;
-          text-decoration: none;
-          transition: 0.3s ease;
-          &:hover {
-            background-color: transparent;
-            color: #3f3d56;
-          }
         }
       }
     }

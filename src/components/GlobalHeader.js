@@ -1,15 +1,35 @@
 import React, { useState } from "react"
-import { Link } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import "./GlobalHeader.scss"
-import { HiMenu } from "react-icons/hi"
+import { FiMenu } from "react-icons/fi"
+import { FaShoppingBag, FaUserAlt } from "react-icons/fa"
+import { BiShoppingBag } from "react-icons/bi"
 import { CgClose } from "react-icons/cg"
 
-const GlobalHeader = () => {
+const GlobalHeader = ({ header }) => {
+  const { customFields } = header
+  // query for menu items
+  const menu = useStaticQuery(graphql`
+    query {
+      allAgilitySitemapNode(filter: { visible: { menu: { eq: true } } }) {
+        nodes {
+          title
+          path
+          visible {
+            menu
+          }
+        }
+      }
+    }
+  `)
+
+  const menuItems = menu.allAgilitySitemapNode.nodes
+
+  // functions that help with menu
   typeof window !== "undefined" &&
     window.addEventListener("resize", function(event) {
       var w = document.documentElement.clientWidth
       // Display result inside a div element
-      console.log(w)
       if (w >= 991) {
         setIsOpen(false)
       }
@@ -49,58 +69,55 @@ const GlobalHeader = () => {
         </div>
         <div className="header__menu">
           <ul>
+            {menuItems.map((menuItem, i) => (
+              <li key={i}>
+                <Link to={menuItem.path} activeClassName="active">
+                  {menuItem.title}
+                </Link>
+              </li>
+            ))}
             <li>
-              <a href="/#home">Home</a>
+              <button className="snipcart-customer-signin">
+                <FaUserAlt />
+              </button>
             </li>
             <li>
-              <a href="/#about">About</a>
-            </li>
-            <li>
-              <a href="/#services">Services</a>
-            </li>
-            <li>
-              <a href="/videos">Videos</a>
-            </li>
-            <li className="book__btn">
-              <a href="/#book">Book</a>
+              <button className="snipcart-checkout">
+                <FaShoppingBag />
+              </button>
             </li>
           </ul>
         </div>
-        <button
-          className="header__mobile-toggle"
-          onClick={handleOpen}
-          onKeyDown={handleOpen}
-        >
-          {isOpen ? <CgClose /> : <HiMenu />}
-        </button>
+        <ul className="header__mobile">
+          <li>
+            <button className="snipcart-checkout">
+              <BiShoppingBag />
+            </button>
+          </li>
+          <li>
+            <button
+              className="header__mobile-toggle"
+              onClick={handleOpen}
+              onKeyDown={handleOpen}
+            >
+              {isOpen ? <CgClose /> : <FiMenu />}
+            </button>
+          </li>
+        </ul>
       </div>
       <div className="header__mobileMenu" style={mobileMenuStyle}>
         <ul>
-          <li>
-            <a href="/#home" onClick={handleOpen} onKeyDown={handleOpen}>
-              Home
-            </a>
-          </li>
-          <li>
-            <a href="/#about" onClick={handleOpen} onKeyDown={handleOpen}>
-              About
-            </a>
-          </li>
-          <li>
-            <a href="/#services" onClick={handleOpen} onKeyDown={handleOpen}>
-              Services
-            </a>
-          </li>
-          <li>
-            <a href="/videos" onClick={handleOpen} onKeyDown={handleOpen}>
-              Videos
-            </a>
-          </li>
-          <li className="book__btn">
-            <a href="/#book" onClick={handleOpen} onKeyDown={handleOpen}>
-              Book
-            </a>
-          </li>
+          {menuItems.map((menuItem, i) => (
+            <li key={i}>
+              <Link
+                to={menuItem.path}
+                onClick={handleOpen}
+                onKeyDown={handleOpen}
+              >
+                {menuItem.title}
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </header>

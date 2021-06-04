@@ -27,7 +27,7 @@ const Slide = ({ name, text }) => {
   return (
     <div className="slider__slide">
       <img src={flower} alt="Flower" />
-      <p className="text">{text}</p>
+      <p className="text">"{text}"</p>
       <p className="name">{name}</p>
     </div>
   )
