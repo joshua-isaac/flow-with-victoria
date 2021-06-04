@@ -13,7 +13,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
-    "@agility/gatsby-image-agilitycms": "^1.0.0",
+    "@agility/gatsby-image-agilitycms": "^1.0.3",
     "@agility/gatsby-source-agilitycms": "^3.0.0",
     "babel-plugin-styled-components": "^1.11.1",
     "bootstrap": "^4.5.2",
@@ -43,6 +43,7 @@
     "react-slick": "^0.27.11",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.2.0",
+    "swr": "^0.5.6",
     "truncate-html": "^1.0.2"
   },
   "devDependencies": {

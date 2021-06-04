@@ -129,27 +129,17 @@
             svg {
               color: #3f3d56;
               font-size: 16px;
+              transition: 0.3s ease;
+            }
+            &:hover {
+              svg {
+                color: #f7cbe6;
+              }
             }
           }
         }
         li:last-child {
           margin-right: 0;
-        }
-        .book__btn {
-          margin-right: 0;
-          a {
-            background-color: #f7cbe6;
-            border: 3px solid #f7cbe6;
-            padding: 8px 30px;
-            border-radius: 20px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: 0.3s ease;
-            &:hover {
-              background-color: transparent;
-              color: #3f3d56;
-            }
-          }
         }
       }
     }
@@ -160,6 +150,9 @@
       }
       li {
         margin-right: 15px;
+        @media (max-width: 575px) {
+          margin-right: 5px;
+        }
         button {
           background-color: transparent;
           border: none;
@@ -205,21 +198,6 @@
         margin: 24px 0;
         a {
           text-decoration: none;
-        }
-      }
-      .book__btn {
-        a {
-          background-color: #f7cbe6;
-          border: 3px solid #f7cbe6;
-          padding: 8px 30px;
-          border-radius: 20px;
-          font-weight: bold;
-          text-decoration: none;
-          transition: 0.3s ease;
-          &:hover {
-            background-color: transparent;
-            color: #3f3d56;
-          }
         }
       }
     }

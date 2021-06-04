@@ -19,7 +19,7 @@ const MembershipHero = ({ item }) => {
                 {membershipPlan && (
                   <button
                     // Snipcart Default Button Config
-                    class="snipcart-add-item"
+                    className="snipcart-add-item"
                     data-item-id={membershipPlan.customFields.name}
                     data-item-name={membershipPlan.customFields.name}
                     data-item-price={

@@ -5,15 +5,15 @@ $light_green: #dbeddb;
 $dark_purple: #3f3d56;
 $white: #ffffff;
 
-:root {
-  --color-primary: #978459;
-  --color-secondary: #4d4d49;
-  --color-light: #dfdac5;
-  --color-dark: #2a2a28;
-  /* snipcart variables */
-  --bgColor-default: #{$dark_pink};
-  --color-buttonPrimary: #3f3d56;
-}
+// #snipcart {
+//   --color-primary: #978459;
+//   --color-secondary: #4d4d49;
+//   --color-light: #dfdac5;
+//   --color-dark: #2a2a28;
+//   /* snipcart variables */
+//   --bgColor-default: red !important;
+//   --color-buttonPrimary: red !important;
+// }
 
 .main-wrapper {
   max-width: 1200px;

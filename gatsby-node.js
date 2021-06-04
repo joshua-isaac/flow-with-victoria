@@ -21,6 +21,13 @@ exports.createResolvers = args => {
         linkedContentFieldName: "gallery",
       }),
     },
+    // get membership
+    agilityClassesBlock: {
+      linkedContent_membership: agility.getLinkedContentItem({
+        type: "agilityMembershipPlan",
+        linkedContentFieldName: "membership",
+      }),
+    },
   }
   createResolvers(resolvers)
 }

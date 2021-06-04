@@ -10,6 +10,7 @@ import GlobalFooter from "./components/GlobalFooter"
 import SEO from "./components/SEO"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./Main.scss"
+import "./snipcart.css"
 
 //Our query to get the our page data and check for a dynamic page item (agilityItem)
 export const query = graphql`

@@ -23,6 +23,20 @@ const ClassesBlock = props => {
           }
         }
       }
+      membershipPlan: agilityClassesBlock(
+        properties: { referenceName: { eq: "classes_classesblock" } }
+      ) {
+        linkedContent_membership {
+          customFields {
+            monthlyPlanInterval
+            monthlyPlanPrice
+            name
+            description
+            weeklyPlanInterval
+            weeklyPlanPrice
+          }
+        }
+      }
       Packages: allAgilityPackageItem {
         nodes {
           customFields {
@@ -32,7 +46,9 @@ const ClassesBlock = props => {
           }
         }
       }
-      OneOnOne: allAgilityOneonOneItem {
+      OneOnOne: allAgilityOneonOneItem(
+        sort: { fields: properties___itemOrder }
+      ) {
         nodes {
           customFields {
             title
@@ -48,6 +64,9 @@ const ClassesBlock = props => {
   const schedule = data.Schedule
   const packages = data.Packages
   const oneonone = data.OneOnOne
+
+  // get featured plan
+  const membershipPlan = data.membershipPlan.linkedContent_membership
 
   // put class types in array
   const tabContent = [
@@ -89,7 +108,7 @@ const ClassesBlock = props => {
       <div className="tab__content">
         {tabContent.map((tab, i) => {
           if (tab.type === active.type) {
-            // schedule tab type
+            // return schedule tab type
             if (active.type === "Schedule") {
               return (
                 <div key={tab.type} className="schedule__tab">
@@ -123,8 +142,90 @@ const ClassesBlock = props => {
                   })}
                 </div>
               )
+            } else if (active.type === "Packages") {
+              // else return packages tab
+              return (
+                membershipPlan && (
+                  <div key={tab.type} className="other__tab">
+                    <h1>{active.type}</h1>
+                    <div className="other__tab-item">
+                      <h4 className="other__tab-title">
+                        {membershipPlan.customFields.name}
+                      </h4>
+                      <p className="other__tab-price">
+                        Weekly & Monthly plans available
+                      </p>
+                      <p className="other__tab-description">
+                        {membershipPlan.customFields.description}
+                      </p>
+                      <button
+                        // Snipcart Default Button Config
+                        className="snipcart-add-item"
+                        data-item-id={membershipPlan.customFields.name}
+                        data-item-name={membershipPlan.customFields.name}
+                        data-item-price={
+                          membershipPlan.customFields.monthlyPlanPrice
+                        }
+                        data-item-url="/classes"
+                        data-item-description="to-do"
+                        data-item-selected-plan="weekly-plan"
+                        // Weekly Plan
+                        data-plan1-id="weekly-plan"
+                        data-plan1-name="Weekly"
+                        data-plan1-frequency="weekly"
+                        data-plan1-interval={
+                          membershipPlan.customFields.weeklyPlanInterval
+                        }
+                        data-item-plan1-price={
+                          membershipPlan.customFields.weeklyPlanPrice
+                        }
+                        // Monthly Plan
+                        data-plan2-id="monthly-plan"
+                        data-plan2-name="Monthly"
+                        data-plan2-frequency="monthly"
+                        data-plan2-interval={
+                          membershipPlan.customFields.monthlyPlanInterval
+                        }
+                        data-item-plan2-price={
+                          membershipPlan.customFields.monthlyPlanPrice
+                        }
+                      >
+                        Sign Up
+                      </button>
+                    </div>
+                    {active.content.nodes.map((node, i) => {
+                      return (
+                        <div className="other__tab-item" key={i}>
+                          <h4 className="other__tab-title">
+                            {node.customFields.title}
+                          </h4>
+                          <p className="other__tab-price">
+                            ${node.customFields.price}
+                          </p>
+                          <p className="other__tab-description">
+                            {node.customFields.description}
+                          </p>
+                          <button
+                            className="snipcart-add-item"
+                            data-item-id={node.customFields.title}
+                            data-item-price={node.customFields.price}
+                            data-item-url="/classes"
+                            data-item-description={
+                              node.customFields.description
+                            }
+                            // data-item-image={node.customFields?.image?.url}
+                            data-item-name={node.customFields.title}
+                          >
+                            Sign Up
+                          </button>
+                        </div>
+                      )
+                    })}
+                  </div>
+                )
+              )
+              // else return one-on-one tab
             } else {
-              // packages & one-on-one type
               return (
                 <div key={tab.type} className="other__tab">
                   <h1>{active.type}</h1>
