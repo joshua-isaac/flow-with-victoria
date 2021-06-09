@@ -13,6 +13,7 @@ const ClassesBlock = props => {
         nodes {
           customFields {
             title
+            productID
             price
             duration
             description
@@ -132,7 +133,7 @@ const ClassesBlock = props => {
                         </p>
                         <button
                           className="snipcart-add-item"
-                          data-item-id={node.customFields.title}
+                          data-item-id={node.customFields.productID}
                           data-item-price={node.customFields.price}
                           data-item-url="/classes"
                           data-item-description={node.customFields.description}

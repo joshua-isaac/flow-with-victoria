@@ -1,9 +1,13 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Row, Col } from "react-bootstrap"
 import "./Hero.scss"
+import { SnipcartContext } from "gatsby-plugin-snipcart-advanced/context"
 
 const MembershipHero = ({ item }) => {
   const { customFields } = item
+
+  const { state } = useContext(SnipcartContext)
+  console.log(state)
 
   const { image, title, text, membershipPlan } = customFields
 
