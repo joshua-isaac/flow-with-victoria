@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import "./ClassesBlock.scss"
+// import { format } from "date-fns"
 import ScheduleTabItem from "../components/ScheduleTabItem"
 
 const ClassesBlock = props => {
@@ -119,32 +120,7 @@ const ClassesBlock = props => {
                 <div key={tab.type} className="schedule__tab">
                   <h1>{active.type}</h1>
                   {active.content.nodes.map((node, i) => {
-                    return (
-                      <ScheduleTabItem item={node} key={i} />
-                      // <div className="schedule__tab-item" key={i}>
-                      //   <h4 className="schedule__tab-date">
-                      //     {format(new Date(node.customFields.date), "PPPPp")}
-                      //   </h4>
-                      //   <p className="schedule__tab-title">
-                      //     {node.customFields.title} -{" "}
-                      //     {node.customFields.duration} min
-                      //   </p>
-                      //   <p className="schedule__tab-description">
-                      //     {node.customFields.description}
-                      //   </p>
-                      //   <button
-                      //     className="snipcart-add-item"
-                      //     data-item-id={node.customFields.productID}
-                      //     data-item-price={node.customFields.price}
-                      //     data-item-url="/classes"
-                      //     data-item-description={node.customFields.description}
-                      //     data-item-image={node.customFields?.image?.url}
-                      //     data-item-name={node.customFields.title}
-                      //   >
-                      //     Sign Up
-                      //   </button>
-                      // </div>
-                    )
+                    return <ScheduleTabItem item={node} key={i} />
                   })}
                 </div>
               )
@@ -218,7 +194,7 @@ const ClassesBlock = props => {
                             className="snipcart-add-item"
                             data-item-id={node.customFields.title}
                             data-item-price={node.customFields.price}
-                            data-item-url="/classes"
+                            data-item-url="/api/products"
                             data-item-description={
                               node.customFields.description
                             }
@@ -254,7 +230,7 @@ const ClassesBlock = props => {
                           className="snipcart-add-item"
                           data-item-id={node.customFields.title}
                           data-item-price={node.customFields.price}
-                          data-item-url="/classes"
+                          data-item-url="/api/products"
                           data-item-description={node.customFields.description}
                           // data-item-image={node.customFields?.image?.url}
                           data-item-name={node.customFields.title}
