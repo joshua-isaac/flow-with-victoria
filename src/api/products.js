@@ -9,6 +9,16 @@ const api = agility.getApi({
 // set up language code
 const languageCode = "en-us"
 
+// get membership plans
+const getMembershipPlans = async () => {
+  const response = await api.getContentList({
+    referenceName: "membershipplans",
+    languageCode,
+  })
+
+  return response
+}
+
 // get schedule products
 const getSchedule = async () => {
   // call agility for schedule products
@@ -43,6 +53,23 @@ const getOneOnOne = async () => {
 }
 
 export default async function handler(req, res) {
+  // fetch membership plans
+  const rawMembershipPlans = await getMembershipPlans()
+
+  // return clean membership plans object
+  const membershipPlans = rawMembershipPlans.items.map(product => {
+    return {
+      title: product.fields.name,
+      id: product.fields.productID,
+      image: product.fields.image.url,
+      description: product.fields.description,
+      weeklyPlanPrice: product.fields.weeklyPlanPrice,
+      weeklyPlanInterval: product.fields.weeklyPlanInterval,
+      monthlyPlanPrice: product.fields.monthlyPlanPrice,
+      monthlyPlanInterval: product.fields.monthlyPlanInterval,
+    }
+  })
+
   // fetch schedule products
   const rawScheduleProducts = await getSchedule()
 
@@ -86,6 +113,7 @@ export default async function handler(req, res) {
   })
 
   const products = [
+    ...membershipPlans,
     ...scheduleProducts,
     ...packagesProducts,
     ...oneOnOneProducts,

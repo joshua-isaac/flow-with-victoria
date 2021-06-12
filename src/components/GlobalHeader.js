@@ -7,7 +7,6 @@ import { BiShoppingBag } from "react-icons/bi"
 import { CgClose } from "react-icons/cg"
 
 const GlobalHeader = ({ header }) => {
-  const { customFields } = header
   // query for menu items
   const menu = useStaticQuery(graphql`
     query {

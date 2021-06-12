@@ -16,6 +16,8 @@
     "@agility/content-fetch": "^1.1.1",
     "@agility/gatsby-image-agilitycms": "^1.0.3",
     "@agility/gatsby-source-agilitycms": "^3.0.0",
+    "@u-wave/react-youtube": "^0.7.2",
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.2",
     "date-fns": "^2.22.1",
     "dotenv": "^8.1.0",

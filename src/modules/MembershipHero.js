@@ -26,7 +26,7 @@ const MembershipHero = ({ item }) => {
                     data-item-price={
                       membershipPlan.customFields.monthlyPlanPrice
                     }
-                    data-item-url="/classes"
+                    data-item-url="/api/products"
                     data-item-description={
                       membershipPlan.customFields.description
                     }

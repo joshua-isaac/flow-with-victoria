@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import "./ClassesBlock.scss"
-// import { format } from "date-fns"
 import ScheduleTabItem from "../components/ScheduleTabItem"
 
 const ClassesBlock = props => {
@@ -149,7 +148,7 @@ const ClassesBlock = props => {
                         data-item-price={
                           membershipPlan.customFields.monthlyPlanPrice
                         }
-                        data-item-url="/classes"
+                        data-item-url="/api/products"
                         data-item-description={
                           membershipPlan.customFields.description
                         }

@@ -1,42 +1,31 @@
 import React, { useEffect, useState } from "react"
+import axios from "axios"
 import { format } from "date-fns"
 
 const ScheduleTabItem = ({ item }) => {
   // set up availability
   const [available, setAvailable] = useState(true)
 
-  console.log(available)
+  useEffect(() => {
+    // get stock function
+    const getStock = async () => {
+      // get stock from api
+      const stock = await axios.get(`/api/getstock`)
 
-  // useEffect to call function on component mount
-  // useEffect(() => {
-  //   // set up snipcart secret key
-  //   const secret = process.env.GATSBY_SNIPCART_SECRET_API_KEY
+      // find stock for item
+      const productStock = stock.data.find(
+        product => product.id === item.customFields.productID
+      )
 
-  //   // set up product ID
-  //   const productID = item.customFields.productID
+      // if we're managing stock, and stock is less than or equal to 0 set availability to false
+      if (productStock.stock <= 0) {
+        setAvailable(false)
+      }
+    }
 
-  //   const getData = async () => {
-  //     const request = await fetch(
-  //       `https://app.snipcart.com/api/products/${productID}`,
-  //       {
-  //         headers: {
-  //           Authorization: `Basic ${btoa(secret)}`,
-  //           Accept: "application/json",
-  //         },
-  //       }
-  //     )
-
-  //     const result = await request.json()
-
-  //     console.log(result)
-
-  //     if (result.totalStock <= 0) {
-  //       setAvailable(false)
-  //     }
-  //   }
-  //   // invoke function
-  //   getData()
-  // }, [])
+    // invoke function
+    getStock()
+  }, [item.customFields.productID])
 
   return (
     <div className="schedule__tab-item">
@@ -62,7 +51,9 @@ const ScheduleTabItem = ({ item }) => {
           Sign Up
         </button>
       ) : (
-        <p>CLASS FULL.</p>
+        <p className="class__full">
+          This class is currently full. Check back next week!
+        </p>
       )}
     </div>
   )
