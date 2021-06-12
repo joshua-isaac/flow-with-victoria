@@ -38,6 +38,7 @@ const AgilityPage = ({ pageContext, data }) => {
       <SEO
         title={viewModel.page.title}
         description={viewModel.page.seo.metaDescription}
+        keywords={viewModel.page.seo.metaKeywords}
       />
       <PreviewBar isPreview={viewModel.isPreview} />
       <GlobalHeader

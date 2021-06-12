@@ -5,19 +5,19 @@ import ogImage from "../img/og-img.png"
 const SEO = ({ title, description }) => {
   return (
     <Helmet
-      title={`Flow With Victoria | Certified Yoga & Barre Instructor In Toronto`}
+      title={`${title} | Flow With Victoria`}
       htmlAttributes={{
         lang: "en",
       }}
       meta={[
         {
           name: `description`,
-          content: `Certified Yoga & Barre Instructor helping you find peace, love and gratitude through every session.`,
+          content: `Certified Yoga & Barre Instructor based in Toronto helping you find peace, love and gratitude through every session.`,
         },
         {
           name: "keywords",
           content: [
-            "Yoga, Barre, Yoga Instructor, Gentle Hatha, Vinyasa Flow, Hatha, Toronto, Vaughan, Peace, Love, Gratitude",
+            "Yoga, Barre, Yoga Instructor, Gentle Hatha, Restorative, Yoga Party, Corporate Yoga, Private Yoga Sessions, Zoom Yoga Sessions,  Vinyasa Flow, Hatha, Toronto, Vaughan, Peace, Love, Gratitude",
           ],
         },
         {
@@ -26,7 +26,7 @@ const SEO = ({ title, description }) => {
         },
         {
           property: `og:description`,
-          content: `Certified Yoga & Barre Instructor helping you find peace, love and gratitude through every session.`,
+          content: `Certified Yoga & Barre Instructor based in Toronto helping you find peace, love and gratitude through every session.`,
         },
         {
           property: `og:type`,
@@ -46,7 +46,7 @@ const SEO = ({ title, description }) => {
         },
         {
           name: `twitter:description`,
-          content: `Certified Yoga & Barre Instructor helping you find peace, love and gratitude through every session.`,
+          content: `Certified Yoga & Barre Instructor based in Toronto helping you find peace, love and gratitude through every session.`,
         },
         {
           property: `og:image`,

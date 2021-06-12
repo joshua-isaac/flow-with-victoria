@@ -39,14 +39,26 @@ const VideosListBlock = ({ item }) => {
     return <p>loading videos...</p>
   }
 
+  let videos
+
+  if (data) {
+    videos = data.items.map(video => {
+      return {
+        title: video.snippet.title,
+        id: video.snippet.resourceId.videoId,
+        thumbnail: video.snippet.thumbnails.standard,
+      }
+    })
+  }
+
   // return clean object for videos
-  const videos = data.items.map(video => {
-    return {
-      title: video.snippet.title,
-      id: video.snippet.resourceId.videoId,
-      thumbnail: video.snippet.thumbnails.standard,
-    }
-  })
+  // const videos = data.items.map(video => {
+  //   return {
+  //     title: video.snippet.title,
+  //     id: video.snippet.resourceId.videoId,
+  //     thumbnail: video.snippet.thumbnails.standard,
+  //   }
+  // })
 
   return (
     <div className="youtube-list__block">
