@@ -22,7 +22,7 @@ const MembershipHero = ({ item }) => {
                     className="snipcart-add-item"
                     data-item-id={membershipPlan.customFields.name}
                     data-item-name={membershipPlan.customFields.name}
-                    data-item-image={membershipPlan.customFields?.image.url}
+                    data-item-image={membershipPlan.customFields.image.url}
                     data-item-price={
                       membershipPlan.customFields.monthlyPlanPrice
                     }

@@ -63,7 +63,15 @@ const GalleryBlock = ({ item }) => {
     <div className="gallery__block">
       <Slider {...sliderSettings}>
         {data.media.map((image, i) => {
-          return <AgilityImage image={image} layout="fullWidth" key={i} />
+          return (
+            <AgilityImage
+              image={image}
+              layout="fullWidth"
+              key={i}
+              objectPosition="center"
+              objectFit="cover"
+            />
+          )
         })}
       </Slider>
     </div>

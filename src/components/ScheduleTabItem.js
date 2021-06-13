@@ -23,8 +23,10 @@ const ScheduleTabItem = ({ item }) => {
       }
     }
 
-    // invoke function
-    getStock()
+    // if we've enabled manage stock in Agility, invoke function
+    if (item.customFields.manageStock === "true") {
+      getStock()
+    }
   }, [item.customFields.productID])
 
   return (
