@@ -32,7 +32,9 @@ const MembershipHero = ({ item }) => {
                     data-item-description={
                       membershipPlan.customFields.description
                     }
-                    data-item-selected-plan="weekly-plan"
+                    data-item-selected-plan={`${membershipPlan.customFields.name
+                      .replace(/\s+/g, "-")
+                      .toLowerCase()}-weekly-plan`}
                     // Weekly Plan
                     data-plan1-id={`${membershipPlan.customFields.name
                       .replace(/\s+/g, "-")
