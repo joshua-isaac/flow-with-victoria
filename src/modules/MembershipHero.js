@@ -7,6 +7,8 @@ const MembershipHero = ({ item }) => {
 
   const { image, title, text, membershipPlan } = customFields
 
+  console.log(membershipPlan)
+
   return (
     <div className="home__hero">
       <div className="hero__content">
@@ -32,8 +34,10 @@ const MembershipHero = ({ item }) => {
                     }
                     data-item-selected-plan="weekly-plan"
                     // Weekly Plan
-                    data-plan1-id="weekly-plan"
-                    data-plan1-name="Weekly"
+                    data-plan1-id={`${membershipPlan.customFields.name
+                      .replace(/\s+/g, "-")
+                      .toLowerCase()}-weekly-plan`}
+                    data-plan1-name={`${membershipPlan.customFields.name} - Weekly`}
                     data-plan1-frequency="weekly"
                     data-plan1-interval={
                       membershipPlan.customFields.weeklyPlanInterval
@@ -42,8 +46,10 @@ const MembershipHero = ({ item }) => {
                       membershipPlan.customFields.weeklyPlanPrice
                     }
                     // Monthly Plan
-                    data-plan2-id="monthly-plan"
-                    data-plan2-name="Monthly"
+                    data-plan2-id={`${membershipPlan.customFields.name
+                      .replace(/\s+/g, "-")
+                      .toLowerCase()}-monthly-plan`}
+                    data-plan2-name={`${membershipPlan.customFields.name} - Monthly`}
                     data-plan2-frequency="monthly"
                     data-plan2-interval={
                       membershipPlan.customFields.monthlyPlanInterval

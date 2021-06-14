@@ -32,6 +32,7 @@ const ClassesBlock = props => {
           customFields {
             monthlyPlanInterval
             monthlyPlanPrice
+            productID
             name
             image {
               url
@@ -47,6 +48,7 @@ const ClassesBlock = props => {
         nodes {
           customFields {
             title
+            productID
             price
             description
             image {
@@ -62,6 +64,7 @@ const ClassesBlock = props => {
         nodes {
           customFields {
             title
+            productID
             price
             description
             image {
@@ -151,7 +154,7 @@ const ClassesBlock = props => {
                       <button
                         // Snipcart Default Button Config
                         className="snipcart-add-item"
-                        data-item-id={membershipPlan.customFields.name}
+                        data-item-id={membershipPlan.customFields.productID}
                         data-item-name={membershipPlan.customFields.name}
                         data-item-image={membershipPlan.customFields.image.url}
                         data-item-price={
@@ -163,8 +166,8 @@ const ClassesBlock = props => {
                         }
                         data-item-selected-plan="weekly-plan"
                         // Weekly Plan
-                        data-plan1-id="weekly-plan"
-                        data-plan1-name="Weekly"
+                        data-plan1-id={`${membershipPlan.customFields.name.replace(/\s+/g, "-").toLowerCase()}-weekly-plan`}
+                        data-plan1-name={`${membershipPlan.customFields.name} - Weekly`}
                         data-plan1-frequency="weekly"
                         data-plan1-interval={
                           membershipPlan.customFields.weeklyPlanInterval
@@ -173,8 +176,8 @@ const ClassesBlock = props => {
                           membershipPlan.customFields.weeklyPlanPrice
                         }
                         // Monthly Plan
-                        data-plan2-id="monthly-plan"
-                        data-plan2-name="Monthly"
+                        data-plan2-id={`${membershipPlan.customFields.name.replace(/\s+/g, "-").toLowerCase()}-monthly-plan`}
+                        data-plan2-name={`${membershipPlan.customFields.name} - Monthly`}
                         data-plan2-frequency="monthly"
                         data-plan2-interval={
                           membershipPlan.customFields.monthlyPlanInterval
@@ -200,13 +203,13 @@ const ClassesBlock = props => {
                           </p>
                           <button
                             className="snipcart-add-item"
-                            data-item-id={node.customFields.title}
+                            data-item-id={node.customFields.productID}
                             data-item-price={node.customFields.price}
                             data-item-url="/api/products"
                             data-item-description={
                               node.customFields.description
                             }
-                            data-item-image={node.customFields?.image.url}
+                            data-item-image={node.customFields.image.url}
                             data-item-name={node.customFields.title}
                           >
                             Sign Up
@@ -236,7 +239,7 @@ const ClassesBlock = props => {
                         </p>
                         <button
                           className="snipcart-add-item"
-                          data-item-id={node.customFields.title}
+                          data-item-id={node.customFields.productID}
                           data-item-price={node.customFields.price}
                           data-item-url="/api/products"
                           data-item-description={node.customFields.description}
