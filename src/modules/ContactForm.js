@@ -84,7 +84,9 @@ const ContactForm = ({ item }) => {
             required
           />
         </Form.Group>
-        <button className="contact__form-btn">Submit</button>
+        <button className="contact__form-btn" name="Submit">
+          Submit
+        </button>
       </form>
     </div>
   )

@@ -27,7 +27,7 @@ const ScheduleTabItem = ({ item }) => {
     if (item.customFields.manageStock === "true") {
       getStock()
     }
-  }, [item.customFields.productID])
+  }, [item.customFields.productID, item.customFields.manageStock])
 
   return (
     <div className="schedule__tab-item">
