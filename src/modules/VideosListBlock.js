@@ -61,11 +61,15 @@ const VideosListBlock = ({ item }) => {
       ))}
       <div className="youtube-list__buttons">
         {videos.length > visible ? (
-          <button onClick={showMoreVideos}>Load More Videos</button>
+          <button onClick={showMoreVideos} title="Load More Videos">
+            Load More Videos
+          </button>
         ) : (
           <a
             href={customFields.youTubeChannelLink.href}
             target={customFields.youTubeChannelLink.target}
+            title={customFields.youTubeChannelLink.text}
+            rel="noopener noreferrer"
           >
             {customFields.youTubeChannelLink.text}
           </a>

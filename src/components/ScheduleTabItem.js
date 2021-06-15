@@ -43,11 +43,12 @@ const ScheduleTabItem = ({ item }) => {
       {available ? (
         <button
           className="snipcart-add-item"
+          name={item.customFields.title}
           data-item-id={item.customFields.productID}
           data-item-price={item.customFields.price}
           data-item-url="/api/products"
           data-item-description={item.customFields.description}
-          data-item-image={item.customFields?.image?.url}
+          data-item-image={item.customFields.image.url}
           data-item-name={item.customFields.title}
         >
           Sign Up

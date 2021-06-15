@@ -33,7 +33,7 @@ const ClassesBlock = props => {
             monthlyPlanInterval
             monthlyPlanPrice
             productID
-            name
+            title
             image {
               url
               label
@@ -114,6 +114,7 @@ const ClassesBlock = props => {
       <div className="tab__buttons">
         {tabContent.map((tab, i) => (
           <button
+            name={tab.type}
             key={tab.type}
             className={tab.type === active.type ? "active" : ""}
             onClick={() => handleClick(tab)}
@@ -143,7 +144,7 @@ const ClassesBlock = props => {
                     <h1>{active.type}</h1>
                     <div className="other__tab-item">
                       <h4 className="other__tab-title">
-                        {membershipPlan.customFields.name}
+                        {membershipPlan.customFields.title}
                       </h4>
                       <p className="other__tab-price">
                         Weekly & Monthly plans available
@@ -154,8 +155,9 @@ const ClassesBlock = props => {
                       <button
                         // Snipcart Default Button Config
                         className="snipcart-add-item"
+                        name={membershipPlan.customFields.title}
                         data-item-id={membershipPlan.customFields.productID}
-                        data-item-name={membershipPlan.customFields.name}
+                        data-item-name={membershipPlan.customFields.title}
                         data-item-image={membershipPlan.customFields.image.url}
                         data-item-price={
                           membershipPlan.customFields.monthlyPlanPrice
@@ -164,10 +166,10 @@ const ClassesBlock = props => {
                         data-item-description={
                           membershipPlan.customFields.description
                         }
-                        data-item-selected-plan="weekly-plan"
+                        data-item-selected-plan={`${membershipPlan.customFields.productID}-weekly-plan`}
                         // Weekly Plan
-                        data-plan1-id={`${membershipPlan.customFields.name.replace(/\s+/g, "-").toLowerCase()}-weekly-plan`}
-                        data-plan1-name={`${membershipPlan.customFields.name} - Weekly`}
+                        data-plan1-id={`${membershipPlan.customFields.productID}-weekly-plan`}
+                        data-plan1-name={`${membershipPlan.customFields.title} - Weekly`}
                         data-plan1-frequency="weekly"
                         data-plan1-interval={
                           membershipPlan.customFields.weeklyPlanInterval
@@ -176,8 +178,8 @@ const ClassesBlock = props => {
                           membershipPlan.customFields.weeklyPlanPrice
                         }
                         // Monthly Plan
-                        data-plan2-id={`${membershipPlan.customFields.name.replace(/\s+/g, "-").toLowerCase()}-monthly-plan`}
-                        data-plan2-name={`${membershipPlan.customFields.name} - Monthly`}
+                        data-plan2-id={`${membershipPlan.customFields.productID}-monthly-plan`}
+                        data-plan2-name={`${membershipPlan.customFields.title} - Monthly`}
                         data-plan2-frequency="monthly"
                         data-plan2-interval={
                           membershipPlan.customFields.monthlyPlanInterval
@@ -203,6 +205,7 @@ const ClassesBlock = props => {
                           </p>
                           <button
                             className="snipcart-add-item"
+                            name={membershipPlan.customFields.title}
                             data-item-id={node.customFields.productID}
                             data-item-price={node.customFields.price}
                             data-item-url="/api/products"
@@ -239,6 +242,7 @@ const ClassesBlock = props => {
                         </p>
                         <button
                           className="snipcart-add-item"
+                          name={node.customFields.title}
                           data-item-id={node.customFields.productID}
                           data-item-price={node.customFields.price}
                           data-item-url="/api/products"

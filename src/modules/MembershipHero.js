@@ -22,8 +22,9 @@ const MembershipHero = ({ item }) => {
                   <button
                     // Snipcart Default Button Config
                     className="snipcart-add-item"
-                    data-item-id={membershipPlan.customFields.name}
-                    data-item-name={membershipPlan.customFields.name}
+                    name={membershipPlan.customFields.title}
+                    data-item-id={membershipPlan.customFields.productID}
+                    data-item-name={membershipPlan.customFields.title}
                     data-item-image={membershipPlan.customFields.image.url}
                     data-item-price={
                       membershipPlan.customFields.monthlyPlanPrice
@@ -32,14 +33,10 @@ const MembershipHero = ({ item }) => {
                     data-item-description={
                       membershipPlan.customFields.description
                     }
-                    data-item-selected-plan={`${membershipPlan.customFields.name
-                      .replace(/\s+/g, "-")
-                      .toLowerCase()}-weekly-plan`}
+                    data-item-selected-plan={`${membershipPlan.customFields.productID}-weekly-plan`}
                     // Weekly Plan
-                    data-plan1-id={`${membershipPlan.customFields.name
-                      .replace(/\s+/g, "-")
-                      .toLowerCase()}-weekly-plan`}
-                    data-plan1-name={`${membershipPlan.customFields.name} - Weekly`}
+                    data-plan1-id={`${membershipPlan.customFields.productID}-weekly-plan`}
+                    data-plan1-name={`${membershipPlan.customFields.title} - Weekly`}
                     data-plan1-frequency="weekly"
                     data-plan1-interval={
                       membershipPlan.customFields.weeklyPlanInterval
@@ -48,10 +45,8 @@ const MembershipHero = ({ item }) => {
                       membershipPlan.customFields.weeklyPlanPrice
                     }
                     // Monthly Plan
-                    data-plan2-id={`${membershipPlan.customFields.name
-                      .replace(/\s+/g, "-")
-                      .toLowerCase()}-monthly-plan`}
-                    data-plan2-name={`${membershipPlan.customFields.name} - Monthly`}
+                    data-plan2-id={`${membershipPlan.customFields.productID}-monthly-plan`}
+                    data-plan2-name={`${membershipPlan.customFields.title} - Monthly`}
                     data-plan2-frequency="monthly"
                     data-plan2-interval={
                       membershipPlan.customFields.monthlyPlanInterval

@@ -70,18 +70,22 @@ const GlobalHeader = ({ header }) => {
           <ul>
             {menuItems.map((menuItem, i) => (
               <li key={i}>
-                <Link to={menuItem.path} activeClassName="active">
+                <Link
+                  to={menuItem.path}
+                  activeClassName="active"
+                  title={menuItem.title}
+                >
                   {menuItem.title}
                 </Link>
               </li>
             ))}
             <li>
-              <button className="snipcart-customer-signin">
+              <button className="snipcart-customer-signin" name="login">
                 <FaUserAlt />
               </button>
             </li>
             <li>
-              <button className="snipcart-checkout">
+              <button className="snipcart-checkout" name="checkout">
                 <FaShoppingBag />
               </button>
             </li>
@@ -89,7 +93,7 @@ const GlobalHeader = ({ header }) => {
         </div>
         <ul className="header__mobile">
           <li>
-            <button className="snipcart-checkout">
+            <button className="snipcart-checkout" name="checkout">
               <BiShoppingBag />
             </button>
           </li>
@@ -112,6 +116,7 @@ const GlobalHeader = ({ header }) => {
                 to={menuItem.path}
                 onClick={handleOpen}
                 onKeyDown={handleOpen}
+                title={menuItem.title}
               >
                 {menuItem.title}
               </Link>

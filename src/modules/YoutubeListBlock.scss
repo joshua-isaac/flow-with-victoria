@@ -6,6 +6,9 @@
     @media (max-width: 768px) {
       height: 400px;
     }
+    @media (max-width: 575px) {
+      height: 350px;
+    }
   }
   .youtube-list__buttons {
     text-align: center;

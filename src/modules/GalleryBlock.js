@@ -66,10 +66,10 @@ const GalleryBlock = ({ item }) => {
           return (
             <AgilityImage
               image={image}
-              layout="fullWidth"
+              layout="constrained"
               key={i}
-              objectPosition="center"
-              objectFit="cover"
+              width="600"
+              height="600"
             />
           )
         })}
