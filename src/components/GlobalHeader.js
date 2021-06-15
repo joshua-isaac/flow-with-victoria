@@ -6,7 +6,7 @@ import { FaShoppingBag, FaUserAlt } from "react-icons/fa"
 import { BiShoppingBag } from "react-icons/bi"
 import { CgClose } from "react-icons/cg"
 
-const GlobalHeader = ({ header }) => {
+const GlobalHeader = () => {
   // query for menu items
   const menu = useStaticQuery(graphql`
     query {
@@ -60,7 +60,7 @@ const GlobalHeader = ({ header }) => {
     <header className="header" id="header">
       <div className="header__container">
         <div className="header__logo">
-          <Link to="/">
+          <Link to="/" title="Flow With Victoria">
             <h1>
               FLOW<span>WITH</span>VICTORIA
             </h1>
@@ -80,12 +80,15 @@ const GlobalHeader = ({ header }) => {
               </li>
             ))}
             <li>
-              <button className="snipcart-customer-signin" name="login">
+              <button
+                className="snipcart-customer-signin"
+                name="Snipcart Customer Login"
+              >
                 <FaUserAlt />
               </button>
             </li>
             <li>
-              <button className="snipcart-checkout" name="checkout">
+              <button className="snipcart-checkout" name="Snipcart Checkout">
                 <FaShoppingBag />
               </button>
             </li>
@@ -93,7 +96,7 @@ const GlobalHeader = ({ header }) => {
         </div>
         <ul className="header__mobile">
           <li>
-            <button className="snipcart-checkout" name="checkout">
+            <button className="snipcart-checkout" name="Snipcart Checkout">
               <BiShoppingBag />
             </button>
           </li>

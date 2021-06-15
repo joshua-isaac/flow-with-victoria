@@ -1,0 +1,76 @@
+.error404__hero {
+  background-color: #fff4fb;
+  padding: 60px;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  .row {
+    align-items: center;
+  }
+  .error404__content {
+    .error404__text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      .error404__title {
+        max-width: 400px;
+        margin-bottom: 15px;
+      }
+      .error404__link {
+        margin-top: 35px;
+        a,
+        button {
+          border: none;
+          outline: none;
+          background-color: #f7cbe6;
+          border: 3px solid #f7cbe6;
+          padding: 8px 30px;
+          border-radius: 20px;
+          font-weight: bold;
+          text-decoration: none;
+          transition: 0.3s ease;
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+    .error404__image {
+      text-align: center;
+      img {
+        max-width: 300px;
+        transition: 0.3s ease;
+      }
+    }
+    @media (max-width: 991px) {
+      .col-lg-6:first-child {
+        order: 1;
+        .error404__text {
+          text-align: center;
+          margin-top: 25px;
+          .error404__title {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 575px) {
+    padding: 25px;
+    .error404__content {
+      .error404__image {
+        img {
+          max-width: 200px;
+        }
+      }
+      .error404__text {
+        .error404__title {
+          font-size: 30px;
+        }
+        .error404__link {
+          padding-bottom: 25px;
+        }
+      }
+    }
+  }
+}
