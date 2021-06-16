@@ -42,7 +42,7 @@ const SEO = ({ title, description }) => {
         },
         {
           name: `twitter:title`,
-          content: `Flow With Victoria`,
+          content: `${title} | Flow With Victoria`,
         },
         {
           name: `twitter:description`,
