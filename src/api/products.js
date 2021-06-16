@@ -60,11 +60,12 @@ export default async function handler(req, res) {
 
   const membershipPlans = rawMembershipPlans.items.map(product => {
     return {
-      title: product.fields.title,
       id: product.fields.productID,
-      image: product.fields.image.url,
-      description: product.fields.description,
+      name: product.fields.title,
+      url: "/api/products",
       price: product.fields.weeklyPlanPrice,
+      description: product.fields.description,
+      image: product.fields.image.url,
       availablePlans: [
         {
           id: `${product.fields.productID}-weekly-plan`,
