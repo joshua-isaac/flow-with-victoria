@@ -63,6 +63,7 @@ export default async function handler(req, res) {
       id: product.fields.productID,
       image: product.fields.image.url,
       description: product.fields.description,
+      price: product.fields.weeklyPlanPrice,
       weeklyPlanPrice: product.fields.weeklyPlanPrice,
       weeklyPlanInterval: product.fields.weeklyPlanInterval,
       monthlyPlanPrice: product.fields.monthlyPlanPrice,
