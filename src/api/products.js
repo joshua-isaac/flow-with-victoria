@@ -57,6 +57,7 @@ export default async function handler(req, res) {
   const rawMembershipPlans = await getMembershipPlans()
 
   // return clean membership plans object
+
   const membershipPlans = rawMembershipPlans.items.map(product => {
     return {
       title: product.fields.title,
