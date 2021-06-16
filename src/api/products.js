@@ -65,10 +65,22 @@ export default async function handler(req, res) {
       image: product.fields.image.url,
       description: product.fields.description,
       price: product.fields.weeklyPlanPrice,
-      weeklyPlanPrice: product.fields.weeklyPlanPrice,
-      weeklyPlanInterval: product.fields.weeklyPlanInterval,
-      monthlyPlanPrice: product.fields.monthlyPlanPrice,
-      monthlyPlanInterval: product.fields.monthlyPlanInterval,
+      availablePlans: [
+        {
+          id: `${product.fields.productID}-weekly-plan`,
+          name: product.fields.title,
+          frequency: "weekly",
+          interval: product.fields.weeklyPlanInterval,
+          itemPrice: product.fields.weeklyPlanPrice,
+        },
+        {
+          id: `${product.fields.productID}-monthly-plan`,
+          name: product.fields.title,
+          frequency: "monthly",
+          interval: product.fields.monthlyPlanInterval,
+          itemPrice: product.fields.monthlyPlanPrice,
+        },
+      ],
     }
   })
 
