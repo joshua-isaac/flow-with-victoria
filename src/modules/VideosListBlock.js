@@ -59,22 +59,24 @@ const VideosListBlock = ({ item }) => {
           <YouTube video={video.id} width="100%" height="600px" />
         </div>
       ))}
-      <div className="youtube-list__buttons">
-        {videos.length > visible ? (
-          <button onClick={showMoreVideos} title="Load More Videos">
-            Load More Videos
-          </button>
-        ) : (
-          <a
-            href={customFields.youTubeChannelLink.href}
-            target={customFields.youTubeChannelLink.target}
-            title={customFields.youTubeChannelLink.text}
-            rel="noopener noreferrer"
-          >
-            {customFields.youTubeChannelLink.text}
-          </a>
-        )}
-      </div>
+      {videos && (
+        <div className="youtube-list__buttons">
+          {videos.length > visible ? (
+            <button onClick={showMoreVideos} title="Load More Videos">
+              Load More Videos
+            </button>
+          ) : (
+            <a
+              href={customFields.youTubeChannelLink.href}
+              target={customFields.youTubeChannelLink.target}
+              title={customFields.youTubeChannelLink.text}
+              rel="noopener noreferrer"
+            >
+              {customFields.youTubeChannelLink.text}
+            </a>
+          )}
+        </div>
+      )}
     </div>
   )
 }

@@ -158,7 +158,7 @@ const ClassesBlock = props => {
                         data-item-name={membershipPlan.customFields.title}
                         data-item-image={membershipPlan.customFields.image.url}
                         data-item-price={
-                          membershipPlan.customFields.monthlyPlanPrice
+                          membershipPlan.customFields.weeklyPlanPrice
                         }
                         data-item-url="/api/products"
                         data-item-description={
