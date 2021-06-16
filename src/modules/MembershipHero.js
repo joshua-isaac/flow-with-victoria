@@ -32,8 +32,8 @@ const MembershipHero = ({ item }) => {
                     data-item-description={
                       membershipPlan.customFields.description
                     }
-                    // data-item-selected-plan={`${membershipPlan.customFields.productID}-weekly`}
-                    data-item-url="/api/products"
+                    data-item-selected-plan={`${membershipPlan.customFields.productID}-weekly`}
+                    data-item-url="/classes"
                     data-item-image={membershipPlan.customFields.image.url}
                     // Weekly Plan
                     data-plan1-id={`${membershipPlan.customFields.productID}-weekly`}
