@@ -1,6 +1,8 @@
 # Flow With Victoria
 
-Website for Flow With Victoria - [View Site](https://www.flowwithvictoria.ca)
+Website for Flow With Victoria
+
+[View Live Site](https://www.flowwithvictoria.ca)
 
 ### Uses:
 - [Gatsby JS](https://www.gatsbyjs.com/) - Static Site Generator
