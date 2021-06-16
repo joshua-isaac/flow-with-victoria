@@ -59,7 +59,7 @@ export default async function handler(req, res) {
   // return clean membership plans object
   const membershipPlans = rawMembershipPlans.items.map(product => {
     return {
-      title: product.fields.name,
+      title: product.fields.title,
       id: product.fields.productID,
       image: product.fields.image.url,
       description: product.fields.description,

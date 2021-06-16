@@ -22,12 +22,12 @@ const MembershipHero = ({ item }) => {
                   <button
                     // Snipcart Default Button Config
                     className="snipcart-add-item"
-                    name={membershipPlan.customFields.title}
+                    // name={membershipPlan.customFields.title}
                     data-item-id={membershipPlan.customFields.productID}
                     data-item-name={membershipPlan.customFields.title}
                     data-item-image={membershipPlan.customFields.image.url}
                     data-item-price={
-                      membershipPlan.customFields.monthlyPlanPrice
+                      membershipPlan.customFields.weeklyPlanPrice
                     }
                     data-item-url="/api/products"
                     data-item-description={

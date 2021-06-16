@@ -114,7 +114,6 @@ const ClassesBlock = props => {
       <div className="tab__buttons">
         {tabContent.map((tab, i) => (
           <button
-            name={tab.type}
             key={tab.type}
             className={tab.type === active.type ? "active" : ""}
             onClick={() => handleClick(tab)}
@@ -155,7 +154,6 @@ const ClassesBlock = props => {
                       <button
                         // Snipcart Default Button Config
                         className="snipcart-add-item"
-                        name={membershipPlan.customFields.title}
                         data-item-id={membershipPlan.customFields.productID}
                         data-item-name={membershipPlan.customFields.title}
                         data-item-image={membershipPlan.customFields.image.url}
@@ -205,7 +203,6 @@ const ClassesBlock = props => {
                           </p>
                           <button
                             className="snipcart-add-item"
-                            name={membershipPlan.customFields.title}
                             data-item-id={node.customFields.productID}
                             data-item-price={node.customFields.price}
                             data-item-url="/api/products"
@@ -242,7 +239,6 @@ const ClassesBlock = props => {
                         </p>
                         <button
                           className="snipcart-add-item"
-                          name={node.customFields.title}
                           data-item-id={node.customFields.productID}
                           data-item-price={node.customFields.price}
                           data-item-url="/api/products"
