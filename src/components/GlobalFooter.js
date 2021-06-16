@@ -46,6 +46,7 @@ const GlobalFooter = () => {
             href={instagramLink.href}
             target={instagramLink.target}
             title={instagramLink.text}
+            rel="noopener noreferrer"
           >
             <FaInstagram />
           </a>
@@ -55,6 +56,7 @@ const GlobalFooter = () => {
             href={youtubeLink.href}
             target={youtubeLink.target}
             title={youtubeLink.text}
+            rel="noopener noreferrer"
           >
             <FaYoutube />
           </a>

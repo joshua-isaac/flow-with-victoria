@@ -14,13 +14,6 @@ exports.createResolvers = args => {
   } = args
 
   const resolvers = {
-    // get linked images
-    agilityGalleryBlock: {
-      linkedContent_gallery: agility.getLinkedContentList({
-        type: "agilityImage",
-        linkedContentFieldName: "gallery",
-      }),
-    },
     // get membership
     agilityClassesBlock: {
       linkedContent_membership: agility.getLinkedContentItem({
