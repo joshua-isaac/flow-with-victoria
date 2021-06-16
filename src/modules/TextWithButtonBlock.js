@@ -8,7 +8,9 @@ const TextWithButtonBlock = ({ item }) => {
     <div className="text__with__button__block">
       <h3>{customFields.title}</h3>
       <p>{customFields.text}</p>
-      <Link to={customFields.button.href}>{customFields.button.text}</Link>
+      <Link to={customFields.button.href} title={customFields.button.text}>
+        {customFields.button.text}
+      </Link>
     </div>
   )
 }

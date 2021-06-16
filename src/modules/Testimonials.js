@@ -26,7 +26,7 @@ const TESTIMONIALS_QUERY = graphql`
 const Slide = ({ name, text }) => {
   return (
     <div className="slider__slide">
-      <img src={flower} alt="Flower" />
+      <img src={flower} alt="Flower" width="85" height="50" />
       <p className="text">"{text}"</p>
       <p className="name">{name}</p>
     </div>

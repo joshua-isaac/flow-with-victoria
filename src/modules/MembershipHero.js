@@ -7,6 +7,8 @@ const MembershipHero = ({ item }) => {
 
   const { image, title, text, membershipPlan } = customFields
 
+  console.log(membershipPlan)
+
   return (
     <div className="home__hero">
       <div className="hero__content">
@@ -20,20 +22,21 @@ const MembershipHero = ({ item }) => {
                   <button
                     // Snipcart Default Button Config
                     className="snipcart-add-item"
-                    data-item-id={membershipPlan.customFields.name}
-                    data-item-name={membershipPlan.customFields.name}
-                    data-item-image={membershipPlan.customFields?.image.url}
+                    // name={membershipPlan.customFields.title}
+                    data-item-id={membershipPlan.customFields.productID}
+                    data-item-name={membershipPlan.customFields.title}
+                    data-item-image={membershipPlan.customFields.image.url}
                     data-item-price={
-                      membershipPlan.customFields.monthlyPlanPrice
+                      membershipPlan.customFields.weeklyPlanPrice
                     }
-                    data-item-url="/classes"
+                    data-item-url="/api/products"
                     data-item-description={
                       membershipPlan.customFields.description
                     }
-                    data-item-selected-plan="weekly-plan"
+                    data-item-selected-plan={`${membershipPlan.customFields.productID}-weekly-plan`}
                     // Weekly Plan
-                    data-plan1-id="weekly-plan"
-                    data-plan1-name="Weekly"
+                    data-plan1-id={`${membershipPlan.customFields.productID}-weekly-plan`}
+                    data-plan1-name={`${membershipPlan.customFields.title} - Weekly`}
                     data-plan1-frequency="weekly"
                     data-plan1-interval={
                       membershipPlan.customFields.weeklyPlanInterval
@@ -42,8 +45,8 @@ const MembershipHero = ({ item }) => {
                       membershipPlan.customFields.weeklyPlanPrice
                     }
                     // Monthly Plan
-                    data-plan2-id="monthly-plan"
-                    data-plan2-name="Monthly"
+                    data-plan2-id={`${membershipPlan.customFields.productID}-monthly-plan`}
+                    data-plan2-name={`${membershipPlan.customFields.title} - Monthly`}
                     data-plan2-frequency="monthly"
                     data-plan2-interval={
                       membershipPlan.customFields.monthlyPlanInterval
@@ -60,7 +63,7 @@ const MembershipHero = ({ item }) => {
           </Col>
           <Col lg={6}>
             <div className="hero__image">
-              <img src={image.url} alt={image.label} />
+              <img src={image.url} alt={image.label} width="300" height="300" />
             </div>
           </Col>
         </Row>
