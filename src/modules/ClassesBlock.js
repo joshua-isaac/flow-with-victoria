@@ -160,13 +160,13 @@ const ClassesBlock = props => {
                         data-item-price={
                           membershipPlan.customFields.weeklyPlanPrice
                         }
-                        data-item-url="/api/products"
+                        data-item-url="/classes"
                         data-item-description={
                           membershipPlan.customFields.description
                         }
-                        data-item-selected-plan={`${membershipPlan.customFields.productID}-weekly-plan`}
+                        data-item-selected-plan={`${membershipPlan.customFields.productID}-weekly`}
                         // Weekly Plan
-                        data-plan1-id={`${membershipPlan.customFields.productID}-weekly-plan`}
+                        data-plan1-id={`${membershipPlan.customFields.productID}-weekly`}
                         data-plan1-name={`${membershipPlan.customFields.title} - Weekly`}
                         data-plan1-frequency="weekly"
                         data-plan1-interval={
@@ -176,7 +176,7 @@ const ClassesBlock = props => {
                           membershipPlan.customFields.weeklyPlanPrice
                         }
                         // Monthly Plan
-                        data-plan2-id={`${membershipPlan.customFields.productID}-monthly-plan`}
+                        data-plan2-id={`${membershipPlan.customFields.productID}-monthly`}
                         data-plan2-name={`${membershipPlan.customFields.title} - Monthly`}
                         data-plan2-frequency="monthly"
                         data-plan2-interval={

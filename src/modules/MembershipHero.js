@@ -7,10 +7,6 @@ const MembershipHero = ({ item }) => {
 
   const { image, title, text, membershipPlan } = customFields
 
-  // console.log(membershipPlan)
-
-  // console.log(`${membershipPlan.customFields.productID}-monthly-plan`)
-
   return (
     <div className="home__hero">
       <div className="hero__content">
