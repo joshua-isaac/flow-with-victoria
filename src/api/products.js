@@ -68,14 +68,14 @@ export default async function handler(req, res) {
       availablePlans: [
         {
           id: `${product.fields.productID}-weekly-plan`,
-          name: product.fields.title,
+          name: `${product.fields.title} - Weekly`,
           frequency: "weekly",
           interval: product.fields.weeklyPlanInterval,
           itemPrice: product.fields.weeklyPlanPrice,
         },
         {
           id: `${product.fields.productID}-monthly-plan`,
-          name: product.fields.title,
+          name: `${product.fields.title} - Monthly`,
           frequency: "monthly",
           interval: product.fields.monthlyPlanInterval,
           itemPrice: product.fields.monthlyPlanPrice,
