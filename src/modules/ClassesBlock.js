@@ -164,7 +164,7 @@ const ClassesBlock = props => {
                         data-item-description={
                           membershipPlan.customFields.description
                         }
-                        data-item-selected-plan={`${membershipPlan.customFields.productID}-weekly`}
+                        data-item-selected-plan={`${membershipPlan.customFields.productID}-monthly`}
                         // Weekly Plan
                         data-plan1-id={`${membershipPlan.customFields.productID}-weekly`}
                         data-plan1-name={`${membershipPlan.customFields.title} - Weekly`}
