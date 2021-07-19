@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { renderHTML } from "../agility/utils"
 import axios from "axios"
 import { format } from "date-fns"
 
@@ -37,9 +38,10 @@ const ScheduleTabItem = ({ item }) => {
       <p className="schedule__tab-title">
         {item.customFields.title} - {item.customFields.duration} min
       </p>
-      <p className="schedule__tab-description">
-        {item.customFields.description}
-      </p>
+      <div
+        className="schedule__tab-description"
+        dangerouslySetInnerHTML={renderHTML(item.customFields.description)}
+      />
       {available ? (
         <button
           className="snipcart-add-item"

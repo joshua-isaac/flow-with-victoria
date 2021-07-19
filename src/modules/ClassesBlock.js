@@ -9,6 +9,7 @@ const ClassesBlock = props => {
     query {
       Schedule: allAgilityScheduleItem(
         sort: { order: ASC, fields: customFields___date }
+        filter: { properties: { referenceName: { eq: "schedule" } } }
       ) {
         nodes {
           customFields {
@@ -41,6 +42,24 @@ const ClassesBlock = props => {
             description
             weeklyPlanInterval
             weeklyPlanPrice
+          }
+        }
+      }
+      Workshops: allAgilityScheduleItem(
+        filter: { properties: { referenceName: { eq: "workshops" } } }
+      ) {
+        nodes {
+          customFields {
+            title
+            productID
+            price
+            duration
+            description
+            date
+            manageStock
+            image {
+              url
+            }
           }
         }
       }
@@ -81,6 +100,9 @@ const ClassesBlock = props => {
   const schedule = data.Schedule
   const packages = data.Packages
   const oneonone = data.OneOnOne
+  const workshops = data.Workshops
+
+  console.log(workshops)
 
   // get featured plan
   const membershipPlan = data.membershipPlan.linkedContent_membership
@@ -90,6 +112,10 @@ const ClassesBlock = props => {
     {
       type: "Schedule",
       content: schedule,
+    },
+    {
+      type: "Workshops",
+      content: workshops,
     },
     {
       type: "Packages",
@@ -127,6 +153,15 @@ const ClassesBlock = props => {
           if (tab.type === active.type) {
             // return schedule tab type
             if (active.type === "Schedule") {
+              return (
+                <div key={tab.type} className="schedule__tab">
+                  <h1>{active.type}</h1>
+                  {active.content.nodes.map((node, i) => {
+                    return <ScheduleTabItem item={node} key={i} />
+                  })}
+                </div>
+              )
+            } else if (active.type === "Workshops") {
               return (
                 <div key={tab.type} className="schedule__tab">
                   <h1>{active.type}</h1>

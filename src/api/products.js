@@ -19,6 +19,16 @@ const getMembershipPlans = async () => {
   return response
 }
 
+// get workshop products
+const getWorkshops = async () => {
+  const response = await api.getContentList({
+    referenceName: "workshops",
+    languageCode
+  })
+
+  return response
+}
+
 // get schedule products
 const getSchedule = async () => {
   // call agility for schedule products
@@ -98,6 +108,20 @@ export default async function handler(req, res) {
     }
   })
 
+    // fetch workshop products
+  const rawWorkshopProducts = await getWorkshops()
+
+  // return clean schedule product object
+  const workshopProducts = rawWorkshopProducts.items.map(product => {
+    return {
+      title: product.fields.title,
+      id: product.fields.productID,
+      image: product.fields.image.url,
+      price: product.fields.price,
+      description: product.fields.description,
+    }
+  })
+
   // fetch packages products
   const rawPackages = await getPackages()
 
@@ -129,6 +153,7 @@ export default async function handler(req, res) {
   const products = [
     ...membershipPlans,
     ...scheduleProducts,
+    ...workshopProducts,
     ...packagesProducts,
     ...oneOnOneProducts,
   ]
