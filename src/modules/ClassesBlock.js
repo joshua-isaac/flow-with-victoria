@@ -102,8 +102,6 @@ const ClassesBlock = props => {
   const oneonone = data.OneOnOne
   const workshops = data.Workshops
 
-  console.log(workshops)
-
   // get featured plan
   const membershipPlan = data.membershipPlan.linkedContent_membership
 
