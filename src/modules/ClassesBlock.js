@@ -112,16 +112,16 @@ const ClassesBlock = props => {
       content: schedule,
     },
     {
-      type: "Workshops",
-      content: workshops,
-    },
-    {
       type: "Packages",
       content: packages,
     },
     {
       type: "One-on-One",
       content: oneonone,
+    },
+    {
+      type: "Workshops",
+      content: workshops,
     },
   ]
 
@@ -163,6 +163,9 @@ const ClassesBlock = props => {
               return (
                 <div key={tab.type} className="schedule__tab">
                   <h1>{active.type}</h1>
+                  {active.content.nodes.length <= 0 && (
+                    <p className="no__workshops">no workshops available</p>
+                  )}
                   {active.content.nodes.map((node, i) => {
                     return <ScheduleTabItem item={node} key={i} />
                   })}
