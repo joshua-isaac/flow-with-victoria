@@ -273,7 +273,14 @@ const ClassesBlock = props => {
                         <p className="other__tab-description">
                           {node.customFields.description}
                         </p>
-                        <button
+                        <p className="email__inquiry">
+                          Please email{" "}
+                          <a href="mailto:info@flowwithvictoria.ca">
+                            info@flowwithvictoria.ca
+                          </a>{" "}
+                          for inquries.
+                        </p>
+                        {/* <button
                           className="snipcart-add-item"
                           data-item-id={node.customFields.productID}
                           data-item-price={node.customFields.price}
@@ -283,7 +290,7 @@ const ClassesBlock = props => {
                           data-item-name={node.customFields.title}
                         >
                           Sign Up
-                        </button>
+                        </button> */}
                       </div>
                     )
                   })}

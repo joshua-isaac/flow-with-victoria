@@ -97,6 +97,12 @@
     .other__tab {
       .other__tab-item {
         margin-bottom: 60px;
+        .email__inquiry {
+          a {
+            color: #f7cbe6;
+            text-decoration: underline;
+          }
+        }
       }
       .other__tab-title {
         font-weight: 600;
