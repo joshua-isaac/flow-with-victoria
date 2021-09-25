@@ -38,7 +38,7 @@ const GlobalFooter = () => {
   } = data.agilityGlobalFooter.customFields
   return (
     <footer className="footer">
-      <img src={image.url} alt="Flower" width="60" height="30" />
+      <img src="/assets/flower-logo.svg" alt="Flower" width="80" height="80" />
       <h3>{text}</h3>
       <ul>
         <li>

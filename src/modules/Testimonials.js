@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from "gatsby"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import flower from "../img/flower.svg"
 import "./Testimonials.scss"
 
 const TESTIMONIALS_QUERY = graphql`
@@ -26,7 +25,6 @@ const TESTIMONIALS_QUERY = graphql`
 const Slide = ({ name, text }) => {
   return (
     <div className="slider__slide">
-      {/* <img src={flower} alt="Flower" width="85" height="50" /> */}
       <p className="text">"{text}"</p>
       <p className="name">{name}</p>
     </div>
