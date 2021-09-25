@@ -11,15 +11,17 @@
   a {
     border: none;
     outline: none;
-    background-color: #f7cbe6;
-    border: 3px solid #f7cbe6;
+    color: #ede9e1;
+    background-color: #e3b6aa;
+    border: 2px solid #e3b6aa;
     padding: 8px 30px;
-    border-radius: 20px;
-    font-weight: bold;
+    font-weight: 500;
+    letter-spacing: 1.2;
     text-decoration: none;
     transition: 0.3s ease;
     &:hover {
       background-color: transparent;
+      color: #e3b6aa;
       text-decoration: none;
     }
   }

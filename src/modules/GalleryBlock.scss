@@ -5,7 +5,39 @@
 }
 .gallery__block {
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-bottom: 60px;
+  .slick-slider {
+    .prev-arrow {
+      position: absolute;
+      bottom: 0;
+      right: 50px;
+      &:hover {
+        cursor: pointer;
+      }
+      svg {
+        font-size: 30px;
+        color: #e3b6aa;
+        transition: 0.3s ease;
+        &:hover {
+          color: #ede9e1;
+        }
+      }
+    }
+    .next-arrow {
+      text-align: right;
+      &:hover {
+        cursor: pointer;
+      }
+      svg {
+        font-size: 30px;
+        color: #e3b6aa;
+        transition: 0.3s ease;
+        &:hover {
+          color: #ede9e1;
+        }
+      }
+    }
+  }
   .slick-list {
     margin: 0 -15px;
   }
@@ -14,6 +46,5 @@
   }
   .gatsby-image-wrapper {
     overflow: hidden;
-    border-radius: 15px;
   }
 }

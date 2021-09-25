@@ -6,7 +6,6 @@
   position: fixed;
   width: 100%;
   margin: 0 auto;
-  background-color: #fff;
   z-index: 9;
   right: 0;
   .header__snipcart-actions {
@@ -20,7 +19,7 @@
       border: none;
       outline: none;
       svg {
-        color: #fff;
+        color: #ede9e1;
       }
     }
   }
@@ -28,22 +27,22 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 15px;
-    background-color: rgba(63, 61, 86, 1);
+    background-color: rgba(255, 255, 255, 0.98);
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     .header__logo {
       h1 {
-        color: #fff;
+        color: #444;
       }
     }
     .header__menu {
       ul {
         li {
           a {
-            color: #fff;
+            // color: #ede9e1;
             transition: 0.3s ease;
             &:hover {
-              color: #f7cbe6;
+              color: #e3b6aa;
             }
           }
           button {
@@ -52,7 +51,7 @@
             outline: none;
             position: relative;
             svg {
-              color: #fff;
+              color: #ede9e1;
               font-size: 16px;
             }
           }
@@ -63,14 +62,17 @@
       li {
         button {
           svg {
-            color: #fff;
+            color: #ede9e1;
           }
         }
       }
       .header__mobile-toggle {
         background-color: transparent;
         svg {
-          color: #fff;
+          color: #ede9e1;
+          &:hover {
+            color: #e3b6aa;
+          }
         }
       }
     }
@@ -84,7 +86,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 25px 0;
+    padding: 15px 0;
     align-items: center;
     transition: 0.3s ease;
     .header__logo {
@@ -94,8 +96,8 @@
       h1 {
         font-size: 20px;
         span {
-          font-weight: bold;
-          color: #f7cbe6;
+          font-weight: 500;
+          color: #e3b6aa;
         }
       }
     }
@@ -106,35 +108,35 @@
       ul {
         display: flex;
         li {
-          margin: 0 12px;
+          margin: 0 8px;
           a {
             font-size: 14px;
-            font-weight: bold;
+            font-weight: 500;
             text-decoration: none;
             transition: 0.3s ease;
             letter-spacing: 1.5px;
+            color: #444;
             &:hover {
-              color: #f7cbe6;
+              color: #e3b6aa;
             }
           }
           a.active {
-            color: #f7cbe6;
+            color: #e3b6aa;
           }
           button {
             background-color: transparent;
             border: none;
             outline: none;
             position: relative;
-            top: -2px;
-            svg {
-              color: #3f3d56;
-              font-size: 16px;
-              transition: 0.3s ease;
-            }
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: 0.3s ease;
+            letter-spacing: 1.5px;
+            padding: 0;
+            color: #444;
             &:hover {
-              svg {
-                color: #f7cbe6;
-              }
+              color: #e3b6aa;
             }
           }
         }

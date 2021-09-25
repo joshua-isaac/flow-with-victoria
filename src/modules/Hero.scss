@@ -1,7 +1,7 @@
 .home__hero {
-  background-color: #fff4fb;
+  background-color: #ede9e1;
   padding: 60px;
-  border-radius: 15px;
+
   margin-bottom: 30px;
   .row {
     align-items: center;
@@ -22,15 +22,18 @@
         button {
           border: none;
           outline: none;
-          background-color: #f7cbe6;
-          border: 3px solid #f7cbe6;
+          color: #ede9e1;
+          background-color: #e3b6aa;
+          border: 2px solid #e3b6aa;
           padding: 8px 30px;
-          border-radius: 20px;
-          font-weight: bold;
+
+          font-weight: 500;
+          letter-spacing: 1.2;
           text-decoration: none;
           transition: 0.3s ease;
           &:hover {
             background-color: transparent;
+            color: #e3b6aa;
           }
         }
       }
@@ -38,7 +41,7 @@
     .hero__image {
       text-align: center;
       img {
-        max-width: 300px;
+        width: 100%;
         transition: 0.3s ease;
       }
     }
@@ -58,11 +61,6 @@
   @media (max-width: 575px) {
     padding: 25px;
     .hero__content {
-      .hero__image {
-        img {
-          max-width: 200px;
-        }
-      }
       .hero__text {
         .hero__title {
           font-size: 30px;

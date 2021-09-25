@@ -1,6 +1,5 @@
 .youtube-list__block {
   iframe {
-    border-radius: 15px;
     transition: 0.3s ease;
     margin-bottom: 20px;
     @media (max-width: 768px) {
@@ -17,15 +16,16 @@
     button {
       border: none;
       outline: none;
-      background-color: #f7cbe6;
-      border: 3px solid #f7cbe6;
+      background-color: #e3b6aa;
+      border: 2px solid #e3b6aa;
+      color: #ede9e1;
       padding: 8px 30px;
-      border-radius: 20px;
-      font-weight: bold;
+      font-weight: 500;
       text-decoration: none;
       transition: 0.3s ease;
       &:hover {
         background-color: transparent;
+        color: #e3b6aa;
       }
     }
   }

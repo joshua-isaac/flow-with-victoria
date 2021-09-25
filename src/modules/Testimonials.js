@@ -26,7 +26,7 @@ const TESTIMONIALS_QUERY = graphql`
 const Slide = ({ name, text }) => {
   return (
     <div className="slider__slide">
-      <img src={flower} alt="Flower" width="85" height="50" />
+      {/* <img src={flower} alt="Flower" width="85" height="50" /> */}
       <p className="text">"{text}"</p>
       <p className="name">{name}</p>
     </div>
@@ -37,11 +37,11 @@ const Testimonials = () => {
   const data = useStaticQuery(TESTIMONIALS_QUERY)
   const testimonials = data.allAgilityTestimonials.edges
   const SliderSettings = {
-    dots: true,
+    dots: false,
     arrows: false,
     slidesToShow: 1,
-    // autoplay: true,
-    autoplaySpeed: 4500,
+    autoplay: true,
+    autoplaySpeed: 3000,
     adaptiveHeight: true,
   }
   return (

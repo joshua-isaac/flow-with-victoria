@@ -1,12 +1,16 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import "./GlobalHeader.scss"
 import { FiMenu } from "react-icons/fi"
 import { FaShoppingBag, FaUserAlt } from "react-icons/fa"
 import { BiShoppingBag } from "react-icons/bi"
 import { CgClose } from "react-icons/cg"
+import { SnipcartContext } from "gatsby-plugin-snipcart-advanced/context"
 
 const GlobalHeader = () => {
+  const { state } = useContext(SnipcartContext)
+  const { userStatus, cartQuantity } = state
+
   // query for menu items
   const menu = useStaticQuery(graphql`
     query {
@@ -64,6 +68,11 @@ const GlobalHeader = () => {
             <h1>
               FLOW<span>WITH</span>VICTORIA
             </h1>
+            {/* <img
+              src="/assets/flower-logo.svg"
+              alt="Flow With Victoria"
+              width="50"
+            /> */}
           </Link>
         </div>
         <div className="header__menu">
@@ -79,17 +88,17 @@ const GlobalHeader = () => {
                 </Link>
               </li>
             ))}
-            <li>
+            <li className="sign-in">
               <button
                 className="snipcart-customer-signin"
                 name="Snipcart Customer Login"
               >
-                <FaUserAlt />
+                Account
               </button>
             </li>
-            <li>
+            <li className="cart">
               <button className="snipcart-checkout" name="Snipcart Checkout">
-                <FaShoppingBag />
+                Cart ({cartQuantity})
               </button>
             </li>
           </ul>

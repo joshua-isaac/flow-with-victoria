@@ -1,8 +1,7 @@
 .testimonials__block {
-  margin-bottom: 20px;
-  background-color: #dbeddb;
-  padding: 25px;
-  border-radius: 15px;
+  margin-bottom: 60px;
+  background-color: #ede9e1;
+  padding: 35px;
   .slider__slide {
     text-align: center;
     img {
@@ -13,19 +12,22 @@
       max-width: 850px;
       margin: 0 auto;
       font-style: italic;
+      color: #444;
     }
     .name {
-      font-weight: bold;
+      font-weight: 500;
+      color: #e3b6aa;
     }
   }
   .slick-dots {
     position: unset;
-    margin-top: 15px;
+    margin-top: 25px;
+    border-radius: unset;
     li {
       width: 30px;
       height: 30px;
       button::before {
-        color: #f7cbe6;
+        color: #e3b6aa;
         font-size: 15px;
       }
     }

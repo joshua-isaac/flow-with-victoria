@@ -45,7 +45,7 @@ const Hero = ({ item }) => {
           </Col>
           <Col lg={6}>
             <div className="hero__image">
-              <img src={image.url} alt={image.label} width="300" height="300" />
+              <img src={image.url} alt={image.label} width="300" height="100" />
             </div>
           </Col>
         </Row>

@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import "./GalleryBlock.scss"
 import { AgilityImage } from "@agility/gatsby-image-agilitycms"
+import { CgArrowLongRight, CgArrowLongLeft } from "react-icons/cg"
 
 const GalleryBlock = ({ item }) => {
   const { customFields } = item
@@ -25,9 +26,11 @@ const GalleryBlock = ({ item }) => {
   )
 
   const sliderSettings = {
-    autoplay: true,
-    autoplaySpeed: 2500,
-    arrows: false,
+    // autoplay: true,
+    // autoplaySpeed: 2500,
+    // arrows: false,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     dots: false,
     infinite: true,
     slidesToShow: 3,
@@ -39,6 +42,24 @@ const GalleryBlock = ({ item }) => {
         },
       },
     ],
+  }
+
+  function NextArrow(props) {
+    const { onClick } = props
+    return (
+      <div onClick={onClick} className="next-arrow">
+        <CgArrowLongRight />
+      </div>
+    )
+  }
+
+  function PrevArrow(props) {
+    const { onClick } = props
+    return (
+      <div onClick={onClick} className="prev-arrow">
+        <CgArrowLongLeft />
+      </div>
+    )
   }
 
   // error fetching gallery

@@ -1,14 +1,14 @@
 .footer {
   text-align: center;
-  background-color: #fff4fb;
+  background-color: #ede9e1;
   padding: 40px 15px 15px 15px;
-  border-radius: 15px;
   margin-bottom: 30px;
   img {
     max-width: 60px;
   }
   h3 {
     margin: 15px 0;
+    color: #444;
   }
   ul {
     display: flex;
@@ -20,20 +20,24 @@
         width: 40px;
         height: 40px;
         object-fit: contain;
+        color: #e3b6aa;
       }
     }
   }
   .copyright {
     margin-bottom: 8px;
+    color: #444;
   }
   .copyright,
   .credits {
     font-size: 12px;
+    color: #444;
     a {
       transition: 0.3s ease;
       text-decoration: none;
+      color: #444;
       &:hover {
-        border-bottom: 2px solid #3f3d56;
+        border-bottom: 2px solid #444;
       }
     }
   }
