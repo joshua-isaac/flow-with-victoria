@@ -12,14 +12,14 @@
     text-align: right;
     max-width: 1200px;
     margin: 0 auto;
-    background-color: #3f3d56;
+    background-color: #444;
     padding: 12px 15px;
     button {
       background-color: transparent;
       border: none;
       outline: none;
       svg {
-        color: #ede9e1;
+        color: #444;
       }
     }
   }
@@ -33,6 +33,9 @@
     .header__logo {
       h1 {
         color: #444;
+        @media (max-width: 425px) {
+          font-size: 14px;
+        }
       }
     }
     .header__menu {
@@ -51,8 +54,12 @@
             outline: none;
             position: relative;
             svg {
-              color: #ede9e1;
+              color: #444;
               font-size: 16px;
+              transition: 0.3s ease;
+              &:hover {
+                color: #e3b6aa;
+              }
             }
           }
         }
@@ -62,14 +69,18 @@
       li {
         button {
           svg {
-            color: #ede9e1;
+            color: #444;
+            transition: 0.3s ease;
+            &:hover {
+              color: #e3b6aa;
+            }
           }
         }
       }
       .header__mobile-toggle {
         background-color: transparent;
         svg {
-          color: #ede9e1;
+          color: #444;
           &:hover {
             color: #e3b6aa;
           }
@@ -98,6 +109,9 @@
         span {
           font-weight: 500;
           color: #e3b6aa;
+        }
+        @media (max-width: 425px) {
+          font-size: 14px;
         }
       }
     }
