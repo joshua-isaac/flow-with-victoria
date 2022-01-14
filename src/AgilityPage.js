@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql } from "gatsby"
 import agilityUtils from "./agility/utils"
 import AgilityPageTemplate from "./agility/components/AgilityPageTemplate"
@@ -31,7 +31,23 @@ export const query = graphql`
     }
   }
 `
+
 const AgilityPage = ({ pageContext, data }) => {
+  useEffect(() => {
+    const { Snipcart } = window
+    if (!Snipcart) return
+    console.log("Snipcart: ", Snipcart)
+    const init = async () => {
+      const { customer } = await Snipcart.store.getState()
+      console.log("customer: ", customer)
+      // const subscriptions = await Snipcart.api.customer.fetchOrders({
+      //   offset: 0,
+      //   limit: 5,
+      // })
+      // console.log(subscriptions)
+    }
+    init()
+  }, [])
   const viewModel = agilityUtils.buildPageViewModel({ pageContext, data })
   return (
     <LayoutTemplate>

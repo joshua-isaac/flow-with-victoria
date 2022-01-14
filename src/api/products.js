@@ -23,7 +23,7 @@ const getMembershipPlans = async () => {
 const getWorkshops = async () => {
   const response = await api.getContentList({
     referenceName: "workshops",
-    languageCode
+    languageCode,
   })
 
   return response
@@ -108,7 +108,7 @@ export default async function handler(req, res) {
     }
   })
 
-    // fetch workshop products
+  // fetch workshop products
   const rawWorkshopProducts = await getWorkshops()
 
   // return clean schedule product object
