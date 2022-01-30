@@ -25,6 +25,8 @@ const GalleryBlock = ({ item }) => {
     fetcher
   )
 
+  console.log(data);
+
   const sliderSettings = {
     // autoplay: true,
     // autoplaySpeed: 2500,
