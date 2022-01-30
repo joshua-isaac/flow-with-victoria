@@ -1,16 +1,13 @@
-import React, { useState, useContext } from "react"
+import React, { useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import "./GlobalHeader.scss"
 import { FiMenu } from "react-icons/fi"
-import { FaShoppingBag, FaUserAlt } from "react-icons/fa"
-import { BiShoppingBag } from "react-icons/bi"
+import { FaUserAlt } from "react-icons/fa"
 import { CgClose } from "react-icons/cg"
-import { SnipcartContext } from "gatsby-plugin-snipcart-advanced/context"
+
+import { motion, AnimatePresence } from "framer-motion"
 
 const GlobalHeader = () => {
-  const { state } = useContext(SnipcartContext)
-  const { userStatus, cartQuantity } = state
-
   // query for menu items
   const menu = useStaticQuery(graphql`
     query {
@@ -18,6 +15,8 @@ const GlobalHeader = () => {
         nodes {
           title
           path
+          isFolder
+          menuText
           visible {
             menu
           }
@@ -37,6 +36,8 @@ const GlobalHeader = () => {
         setIsOpen(false)
       }
     })
+
+  // add sticky header
   typeof window !== "undefined" &&
     window.addEventListener("scroll", function(event) {
       var scroll = this.scrollY
@@ -48,16 +49,14 @@ const GlobalHeader = () => {
       }
     })
 
+  // menu open
   const [isOpen, setIsOpen] = useState(false)
+
+  // dropdown menu open
+  const [dropDownOpen, setDropDownOpen] = useState(false)
 
   const handleOpen = () => {
     setIsOpen(!isOpen)
-  }
-
-  const mobileMenuStyle = {
-    overflow: "hidden",
-    height: isOpen ? 275 : 0,
-    transition: "0.3s",
   }
 
   return (
@@ -68,46 +67,54 @@ const GlobalHeader = () => {
             <h1>
               FLOW<span>WITH</span>VICTORIA
             </h1>
-            {/* <img
-              src="/assets/flower-logo.svg"
-              alt="Flow With Victoria"
-              width="50"
-            /> */}
           </Link>
         </div>
         <div className="header__menu">
           <ul>
-            {menuItems.map((menuItem, i) => (
-              <li key={i}>
-                <Link
-                  to={menuItem.path}
-                  activeClassName="active"
-                  title={menuItem.title}
-                >
-                  {menuItem.title}
-                </Link>
-              </li>
-            ))}
-            <li className="sign-in">
-              <button
-                className="snipcart-customer-signin"
-                name="Snipcart Customer Login"
-              >
-                Account
-              </button>
-            </li>
-            <li className="cart">
-              <button className="snipcart-checkout" name="Snipcart Checkout">
-                Cart ({cartQuantity})
-              </button>
-            </li>
+            {menuItems.map((menuItem, i) => {
+              if (menuItem.isFolder === true) {
+                return (
+                  <li
+                    key={i}
+                    activeClassName="active"
+                    className="dropdown-link"
+                  >
+                    {menuItem.menuText}
+                    <ul className="dropdown">
+                      <li>
+                        <a href={`${menuItem.path}/schedule`}>Schedule</a>
+                      </li>
+                      <li>
+                        <a href={`${menuItem.path}/pricing`}>Pricing</a>
+                      </li>
+                      <li>
+                        <a href={`${menuItem.path}/private-sessions`}>
+                          Private Sessions
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                )
+              }
+              return (
+                <li key={i}>
+                  <Link
+                    to={menuItem.path}
+                    activeClassName="active"
+                    title={menuItem.title}
+                  >
+                    {menuItem.title}
+                  </Link>
+                </li>
+              )
+            })}
           </ul>
         </div>
         <ul className="header__mobile">
-          <li>
-            <button className="snipcart-checkout" name="Snipcart Checkout">
-              <BiShoppingBag />
-            </button>
+          <li className="mobile-account">
+            <Link to="/account">
+              <FaUserAlt />
+            </Link>
           </li>
           <li>
             <button
@@ -120,22 +127,88 @@ const GlobalHeader = () => {
           </li>
         </ul>
       </div>
-      <div className="header__mobileMenu" style={mobileMenuStyle}>
-        <ul>
-          {menuItems.map((menuItem, i) => (
-            <li key={i}>
-              <Link
-                to={menuItem.path}
-                onClick={handleOpen}
-                onKeyDown={handleOpen}
-                title={menuItem.title}
-              >
-                {menuItem.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="header__mobileMenu"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.1 }}
+          >
+            <div className="header__container">
+              <div className="header__logo">
+                <Link to="/" title="Flow With Victoria">
+                  <h1>
+                    FLOW<span>WITH</span>VICTORIA
+                  </h1>
+                </Link>
+              </div>
+              <ul className="header__mobile">
+                <li className="mobile-account">
+                  <Link to="/account">
+                    <FaUserAlt />
+                  </Link>
+                </li>
+                <li>
+                  <button
+                    className="header__mobile-toggle"
+                    onClick={handleOpen}
+                    onKeyDown={handleOpen}
+                  >
+                    {isOpen ? <CgClose /> : <FiMenu />}
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <ul>
+              {menuItems.map((menuItem, i) => {
+                if (menuItem.isFolder === true) {
+                  return (
+                    <li
+                      key={i}
+                      activeClassName="active"
+                      className="dropdown-link"
+                      onClick={() => {
+                        setDropDownOpen(!dropDownOpen)
+                      }}
+                    >
+                      {menuItem.menuText}
+                      {dropDownOpen && (
+                        <ul className="dropdown">
+                          <li>
+                            <a href={`${menuItem.path}/schedule`}>Schedule</a>
+                          </li>
+                          <li>
+                            <a href={`${menuItem.path}/pricing`}>Pricing</a>
+                          </li>
+                          <li>
+                            <a href={`${menuItem.path}/private-sessions`}>
+                              Private Sessions
+                            </a>
+                          </li>
+                        </ul>
+                      )}
+                    </li>
+                  )
+                }
+                return (
+                  <li key={i}>
+                    <Link
+                      to={menuItem.path}
+                      onClick={handleOpen}
+                      onKeyDown={handleOpen}
+                      title={menuItem.title}
+                    >
+                      {menuItem.title}
+                    </Link>
+                  </li>
+                )
+              })}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   )
 }

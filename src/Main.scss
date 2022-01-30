@@ -9,6 +9,8 @@ $dark_green: #c4d6c4;
 $light_green: #dbeddb;
 $dark_purple: #3f3d56;
 
+html, body, iframe { height: 100%; }
+
 .main-wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -117,4 +119,10 @@ ul {
 img {
   max-width: 100%;
   height: auto;
+}
+
+iframe {
+  width: 100%;
+  min-height: 650px;
+  margin-bottom: 20px;
 }
