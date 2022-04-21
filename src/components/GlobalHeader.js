@@ -92,6 +92,11 @@ const GlobalHeader = () => {
                           Private Sessions
                         </a>
                       </li>
+                      <li>
+                        <a href={`${menuItem.path}/community`}>
+                          Community
+                        </a>
+                      </li>
                     </ul>
                   </li>
                 )
