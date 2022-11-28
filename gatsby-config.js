@@ -61,33 +61,6 @@ module.exports = {
         masterPageTemplate: "./src/AgilityPage.js",
       },
     },
-    {
-      resolve: `gatsby-plugin-snipcart-advanced`,
-      options: {
-        version: "3.2.0",
-        publicApiKey: process.env.GATSBY_SNIPCART_API_KEY, // use public api key here or in environment variable
-        defaultLang: "en",
-        currency: "cad",
-        openCartOnAdd: true,
-        useSideCart: true,
-        // be careful with this mode cart. The cart in this mode has a bug of scroll in firefox
-        locales: {
-          en: {
-            actions: {
-              checkout: "Checkout",
-            },
-          },
-        },
-        templatesUrl: "",
-        // not work on dev. Gatsby not serve html file in dev https://github.com/gatsbyjs/gatsby/issues/13072
-        innerHTML: `
-            <billing section="bottom">
-                <!-- Customization goes here -->
-            </billing>`,
-      },
-    },
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,

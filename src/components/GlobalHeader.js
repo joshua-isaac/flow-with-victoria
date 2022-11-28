@@ -29,7 +29,7 @@ const GlobalHeader = () => {
 
   // functions that help with menu
   typeof window !== "undefined" &&
-    window.addEventListener("resize", function (event) {
+    window.addEventListener("resize", function(event) {
       var w = document.documentElement.clientWidth
       // Display result inside a div element
       if (w >= 991) {
@@ -39,7 +39,7 @@ const GlobalHeader = () => {
 
   // add sticky header
   typeof window !== "undefined" &&
-    window.addEventListener("scroll", function (event) {
+    window.addEventListener("scroll", function(event) {
       var scroll = this.scrollY
       const header = document.getElementById("header")
       if (scroll >= 50) {
@@ -93,9 +93,7 @@ const GlobalHeader = () => {
                         </a>
                       </li>
                       <li>
-                        <a href={`${menuItem.path}/community`}>
-                          Community
-                        </a>
+                        <a href={`${menuItem.path}/series`}>Series</a>
                       </li>
                     </ul>
                   </li>
@@ -193,9 +191,7 @@ const GlobalHeader = () => {
                             </a>
                           </li>
                           <li>
-                            <a href={`${menuItem.path}/community`}>
-                              Community
-                            </a>
+                            <a href={`${menuItem.path}/series`}>Series</a>
                           </li>
                         </ul>
                       )}
