@@ -27,6 +27,14 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint:
+          "https://flowwithvictoria.us21.list-manage.com/subscribe/post?u=3fa04e96aa56b2202ddbe7b33&amp;id=d4673ee82b&amp;f_id=0024eae1f0", // string; add your MC list endpoint here; see instructions below
+        timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
+      },
+    },
+    {
       //the name of the plugin
       resolve: "@agility/gatsby-source-agilitycms",
       //the options for our plugin
